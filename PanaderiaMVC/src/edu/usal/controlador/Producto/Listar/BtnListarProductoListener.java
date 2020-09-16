@@ -1,4 +1,4 @@
-package edu.usal.controlador.Cliente.Listar;
+package edu.usal.controlador.Producto.Listar;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,16 +7,16 @@ import java.io.IOException;
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
 import edu.usal.vista.Frame;
-import edu.usal.vista.Cliente.ListarClienteVista;
+import edu.usal.vista.Producto.ListarProductoVista;
 
-public class BtnListarClienteListener implements ActionListener {
+public class BtnListarProductoListener implements ActionListener {
 
 	Frame frame;
-	static ListarClienteVista listarClienteVista;
+	static ListarProductoVista listarProductoVista;
 
-	public BtnListarClienteListener() throws IOException {
+	public BtnListarProductoListener() throws IOException {
 		frame = Controlador.frame;
-		listarClienteVista = new ListarClienteVista();
+		listarProductoVista = new ListarProductoVista();
 	}
 
 	@Override
@@ -25,18 +25,17 @@ public class BtnListarClienteListener implements ActionListener {
 		frame.getContentPane().removeAll();
 		frame.getContentPane().invalidate();
 		frame.getContentPane().hide();
-		frame.getContentPane().add(listarClienteVista);
+		frame.getContentPane().add(listarProductoVista);
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 
 		
 		  try {
-			listarClienteVista.addListener(new BtnEnviarListarClienteListener());
-			listarClienteVista.addListenerVolver(new BtnVolver());
+			listarProductoVista.addListener(new BtnEnviarListarProductoListener());
+			listarProductoVista.addListenerVolver(new BtnVolver());
 		} catch (IOException e1) {
 			e1.printStackTrace();
-		}
-		  
+		}  
 		 
 	}
 

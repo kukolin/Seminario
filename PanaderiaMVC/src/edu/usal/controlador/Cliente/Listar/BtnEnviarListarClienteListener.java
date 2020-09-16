@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
-import edu.usal.vista.ListarClienteVista;
+import edu.usal.vista.Cliente.ListarClienteVista;
 
 public class BtnEnviarListarClienteListener implements ActionListener{
 

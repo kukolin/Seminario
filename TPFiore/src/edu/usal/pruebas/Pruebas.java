@@ -31,15 +31,27 @@ public class Pruebas {
 	
 	BigDecimal bigDecimal = new BigDecimal(1);
 	
-	Producto producto = new Producto("", "", 0, 0, bigDecimal);
+	Producto producto = new Producto("dsa", "dsa", 3, 5, bigDecimal);
 	
-//	productoInterfaz.AltaProducto(producto);
+//	productoInterfaz.ModificarProducto(1, producto);
 	
-	Date date = new Date(1123121321L);
 	
-	Cliente cliente = new Cliente(0, "Lucas", "Ane2", "a", "a", "a", 0, 0, date);
+	ArrayList<Producto> al = new ArrayList<Producto>();
+	al = productoInterfaz.ListarProducto();
 	
-	clienteInterfaz.ModificarCliente(2002, cliente);
+	for(int i=0; i< al.size() ; i++) {
+		
+		System.out.print(al.get(i).getNombre());
+		
+	}
+	
+	
+	
+//	Date date = new Date(1123121321L);
+//	
+//	Cliente cliente = new Cliente(0, "Lucas", "Ane2", "a", "a", "a", 0, 0, date);
+//	
+//	clienteInterfaz.ModificarCliente(2002, cliente);
 	
 	
 	

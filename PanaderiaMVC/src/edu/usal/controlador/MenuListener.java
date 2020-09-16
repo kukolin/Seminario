@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import edu.usal.vista.AltaClienteVista;
+import edu.usal.vista.Cliente.AltaClienteVista;
 import edu.usal.vista.Frame;
 import edu.usal.vista.Mensajes;
 

@@ -12,5 +12,7 @@ public interface ProductoInterfaz {
 
 	ArrayList<Producto> ListarProducto() throws SQLException;
 	
-
+	public boolean ModificarProducto(int idProducto, Producto producto) throws SQLException;
+	
+	
 }

@@ -1,4 +1,4 @@
-package edu.usal.controlador.Cliente.Baja;
+package edu.usal.controlador.Producto.Baja;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,19 +7,19 @@ import java.sql.SQLException;
 
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
-import edu.usal.vista.Cliente.AltaClienteVista;
-import edu.usal.vista.Cliente.BajaClienteVista;
+import edu.usal.vista.Producto.AltaProductoVista;
+import edu.usal.vista.Producto.BajaProductoVista;
 import edu.usal.vista.Frame;
 
-public class BtnBorrarClienteListener implements ActionListener{
+public class BtnBorrarProductoListener implements ActionListener{
 
 	Frame frame;
-	BajaClienteVista bajaClienteVista; 
+	BajaProductoVista bajaProductoVista; 
 	
 	
-	public BtnBorrarClienteListener() throws IOException, SQLException {
+	public BtnBorrarProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		bajaClienteVista = new BajaClienteVista();
+		bajaProductoVista = new BajaProductoVista();
 		
 	}
 	
@@ -29,13 +29,13 @@ public class BtnBorrarClienteListener implements ActionListener{
 		frame.getContentPane().removeAll();
 		frame.getContentPane().invalidate();
 		frame.getContentPane().hide();
-		frame.getContentPane().add(bajaClienteVista);			
+		frame.getContentPane().add(bajaProductoVista);			
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
 		try {
-			bajaClienteVista.addListener(new BtnEnviarBorrarClienteListener());
-			bajaClienteVista.addListenerVolver(new BtnVolver());
+			bajaProductoVista.addListener(new BtnEnviarBorrarProductoListener());
+			bajaProductoVista.addListenerVolver(new BtnVolver());
 		} catch (IOException | SQLException e1) {
 			e1.printStackTrace();
 		}
