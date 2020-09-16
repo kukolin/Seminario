@@ -12,7 +12,7 @@ import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
 import edu.usal.negocio.dominio.Cliente;
 import edu.usal.vista.Frame;
-import edu.usal.vista.ModificarClienteVista;
+import edu.usal.vista.Cliente.ModificarClienteVista;
 
 public class BtnModificarClienteListener implements ActionListener{
 

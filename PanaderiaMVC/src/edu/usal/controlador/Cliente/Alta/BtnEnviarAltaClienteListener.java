@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
-import edu.usal.vista.AltaClienteVista;
+import edu.usal.vista.Cliente.AltaClienteVista;
 import edu.usal.vista.Mensajes;
 
 public class BtnEnviarAltaClienteListener implements ActionListener{

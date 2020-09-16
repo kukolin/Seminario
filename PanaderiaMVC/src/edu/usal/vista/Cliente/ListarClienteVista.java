@@ -1,4 +1,4 @@
-package edu.usal.vista;
+package edu.usal.vista.Cliente;
 
 
 import javax.swing.JPanel;

@@ -1,4 +1,4 @@
-package edu.usal.vista;
+package edu.usal.vista.Cliente;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -21,10 +21,12 @@ import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 import cambodia.raven.DateChooser;
+import edu.usal.controlador.Cliente.ItemsClienteListener;
+
 import javax.swing.JRadioButton;
 import java.awt.event.ActionEvent;
 
-public class AltaClienteVista extends JPanel {
+public class ModificarClienteVista extends JPanel {
 	public JButton btnEnviar;
 	public JTextField tNombre;
 	public JTextField tDni;
@@ -34,6 +36,7 @@ public class AltaClienteVista extends JPanel {
 	private JLabel lblNombre_12;
 	public JTextField tTelefono;
 	public ButtonGroup grupo;
+	ItemsClienteListener itemsClienteListener;
 
 	/**
 	 * @wbp.nonvisual location=180,694
@@ -44,11 +47,12 @@ public class AltaClienteVista extends JPanel {
 	public JRadioButton rdbtnM;
 	public JTextField tEmail;
 	public JButton btnVolver;
+	public JComboBox comboBox;
 
-	public AltaClienteVista() throws IOException, SQLException {
+	public ModificarClienteVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		
+		itemsClienteListener = new ItemsClienteListener();
 		grupo = new ButtonGroup();
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(Color.BLACK);
@@ -125,13 +129,18 @@ public class AltaClienteVista extends JPanel {
 			}
 		});
 		
+		JLabel lblCliente = new JLabel("Cliente:");
+		lblCliente.setForeground(new Color(0, 51, 153));
+		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
+		
+		comboBox = new JComboBox(itemsClienteListener.valores());
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnVolver)
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblNombre, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
@@ -141,12 +150,12 @@ public class AltaClienteVista extends JPanel {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(tFechaNac, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+									.addComponent(tFechaNac, GroupLayout.DEFAULT_SIZE, 6, Short.MAX_VALUE)
 									.addGap(30)
 									.addComponent(btnFechaEmic_2))
-								.addComponent(tDireccion, GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-								.addComponent(tDni, GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-								.addComponent(tNombre, GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+								.addComponent(tDireccion, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+								.addComponent(tDni, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+								.addComponent(tNombre, GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
@@ -168,15 +177,25 @@ public class AltaClienteVista extends JPanel {
 									.addGap(18)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 										.addComponent(btnEnviar, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-										.addComponent(tEmail, GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))))))
+										.addComponent(tEmail, GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)))))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(lblCliente, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(comboBox, 0, 312, Short.MAX_VALUE)
+							.addGap(18)
+							.addComponent(btnVolver)))
 					.addGap(213))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(btnVolver)
-					.addGap(59)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnVolver)
+						.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+							.addComponent(lblCliente, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
+							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGap(51)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNombre, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addComponent(tNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -219,6 +238,9 @@ public class AltaClienteVista extends JPanel {
 	public void addListenerVolver(ActionListener al) {
 		btnVolver.addActionListener(al);
 	}
-	
-	
+	public void addListenerComboBox(ItemListener al) {
+		
+		comboBox.addItemListener(al);
+		
+	}
 }

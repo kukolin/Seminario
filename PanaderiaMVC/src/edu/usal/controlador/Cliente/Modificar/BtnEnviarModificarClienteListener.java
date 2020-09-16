@@ -15,7 +15,7 @@ import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
 import edu.usal.vista.Mensajes;
-import edu.usal.vista.ModificarClienteVista;
+import edu.usal.vista.Cliente.ModificarClienteVista;
 
 public class BtnEnviarModificarClienteListener implements ActionListener {
 

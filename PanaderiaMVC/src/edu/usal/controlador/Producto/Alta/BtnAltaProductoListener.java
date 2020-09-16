@@ -1,4 +1,4 @@
-package edu.usal.controlador.Cliente.Alta;
+package edu.usal.controlador.Producto.Alta;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,18 +9,18 @@ import javax.swing.JOptionPane;
 
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
-import edu.usal.vista.Cliente.AltaClienteVista;
+import edu.usal.vista.Producto.AltaProductoVista;
 import edu.usal.vista.Frame;
 
-public class BtnAltaClienteListener implements ActionListener{
+public class BtnAltaProductoListener implements ActionListener{
 	
 	
 	Frame frame;
-	public static AltaClienteVista altaClienteVista;
+	public static AltaProductoVista altaProductoVista;
 	
-	public BtnAltaClienteListener() throws IOException, SQLException {
+	public BtnAltaProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaClienteVista = new AltaClienteVista();
+		altaProductoVista = new AltaProductoVista();
 
 	}
 	
@@ -31,13 +31,13 @@ public class BtnAltaClienteListener implements ActionListener{
 		frame.getContentPane().removeAll();
 		frame.getContentPane().invalidate();
 		frame.getContentPane().hide();
-		frame.getContentPane().add(altaClienteVista);			
+		frame.getContentPane().add(altaProductoVista);			
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
 		try {
-			altaClienteVista.addListener(new BtnEnviarAltaClienteListener());
-			altaClienteVista.addListenerVolver(new BtnVolver());
+			altaProductoVista.addListener(new BtnEnviarAltaProductoListener());
+			altaProductoVista.addListenerVolver(new BtnVolver());
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

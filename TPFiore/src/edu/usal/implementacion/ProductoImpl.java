@@ -3,11 +3,13 @@ package edu.usal.implementacion;
 import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import edu.usal.dao.interfaces.ProductoInterfaz;
+import edu.usal.negocio.dominio.Cliente;
 import edu.usal.negocio.dominio.Producto;
 import edu.usal.util.Conexion;
 
@@ -50,16 +52,82 @@ public class ProductoImpl implements ProductoInterfaz{
 	@Override
 	public boolean BajaProducto(int i) throws SQLException {
 	
-		return false;
+		con = Conexion.getConnection();
+		
+		
+		Statement stm = con.createStatement();
+		
+		String sql = "DELETE FROM Producto WHERE ID_Producto = " + i;
+		
+		stm.execute(sql);
+		
+		stm.close();
+		con.close();
+		
+		return true;
 	}
 
 	@Override
 	public ArrayList<Producto> ListarProducto() throws SQLException {
 		
-		return null;
-	}
-	
+		con = Conexion.getConnection();
+		
+		Statement stm = con.createStatement();
+		
+		String sql = "SELECT * FROM Producto";
+		
+		ResultSet rs = stm.executeQuery(sql);
+				
+		ArrayList<Producto> lista = new ArrayList<Producto>();
+		
+		
+		while(rs.next()) {
+			
 
+				
+			
+//			public Producto(String nombre, String descripcion, int cantidad, int idProducto, BigDecimal precio) {
+
+			Producto producto = new Producto(rs.getString(1), rs.getString(5), rs.getInt(4), rs.getInt(2), rs.getBigDecimal(3));
+			lista.add(producto);
+
+			
+		}
+		stm.close();
+		con.close();
+		
+		
+		return lista;
+	}
+
+	@Override
+	public boolean ModificarProducto(int idProducto, Producto producto) throws SQLException {
+		
+		String nombre = producto.getNombre();
+		String descripcion = producto.getDescripcion();
+		int cantidad = producto.getCantidad();
+		BigDecimal precio = producto.getPrecio();
+		
+		con = Conexion.getConnection();
+		
+		Statement stm = con.createStatement();
+		
+		String updateProducto = "UPDATE Producto SET Nombre = '" + nombre + 
+				"', Precio = " + precio +
+				", Cantidad = " + cantidad +
+				", Descripcion = '" + descripcion + 
+				
+				"' WHERE ID_Producto = " + idProducto;
+
+		
+		stm.execute(updateProducto);
+		
+		stm.close();
+		
+		
+		con.close();
+		return true;
+	}
 	
 
 }
