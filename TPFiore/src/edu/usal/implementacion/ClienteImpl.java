@@ -57,7 +57,7 @@ public class ClienteImpl implements ClienteInterfaz {
 		
 		Statement stm = con.createStatement();
 		
-		String sql = "DELETE FROM Cliente WHERE ID_Cliente = " + i;
+		String sql = "UPDATE Cliente SET Borrado = 1 WHERE ID_Cliente = " + i;
 		
 		stm.execute(sql);
 		
@@ -78,7 +78,7 @@ public class ClienteImpl implements ClienteInterfaz {
 		
 		Statement stm = con.createStatement();
 		
-		String sql = "SELECT * FROM Cliente";
+		String sql = "SELECT * FROM Cliente WHERE Borrado = 0";
 		
 		ResultSet rs = stm.executeQuery(sql);
 				

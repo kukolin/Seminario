@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
+import edu.usal.controlador.Login.LoginControlador;
 import edu.usal.vista.Producto.AltaProductoVista;
 import edu.usal.vista.Frame;
 
@@ -20,7 +21,7 @@ public class BtnAltaProductoListener implements ActionListener{
 	
 	public BtnAltaProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaProductoVista = new AltaProductoVista();
+		altaProductoVista = LoginControlador.altaProductoVista;
 
 	}
 	

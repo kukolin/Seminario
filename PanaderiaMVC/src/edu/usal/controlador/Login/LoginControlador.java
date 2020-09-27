@@ -21,18 +21,28 @@ import edu.usal.dao.interfaces.UsuarioInterfaz;
 import edu.usal.negocio.dominio.Usuario;
 import edu.usal.vista.Frame;
 import edu.usal.vista.PrincipalVista;
+import edu.usal.vista.Producto.AltaProductoVista;
 
 public class LoginControlador implements ActionListener{
 
 	static UsuarioInterfaz usuarioInter;
 	Frame frame;
 	public static PrincipalVista principalVista;
+	public static AltaProductoVista altaProductoVista;
 	
 	public LoginControlador() throws IOException{
 		
 		usuarioInter = UsuarioFactory.GetImplementation("MSSQL");
 		principalVista = new PrincipalVista();
 		frame = Controlador.frame;
+		
+			try {
+				altaProductoVista = new AltaProductoVista();
+			} catch (IOException | SQLException e) {
+				e.printStackTrace();
+			}
+
+		
 		
 		
 	}
@@ -57,6 +67,8 @@ public class LoginControlador implements ActionListener{
 				frame.getContentPane().add(principalVista);			
 				frame.getContentPane().validate();
 				frame.getContentPane().setVisible(true);
+				
+				
 				JOptionPane.showMessageDialog(null, "Login correcto.", "Warning", JOptionPane.WARNING_MESSAGE);
 				
 				principalVista.addActionListeners(new BtnAltaClienteListener());
