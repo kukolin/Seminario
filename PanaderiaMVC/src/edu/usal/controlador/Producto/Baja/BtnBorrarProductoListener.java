@@ -5,8 +5,11 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.swing.JComboBox;
+
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
+import edu.usal.controlador.Producto.ItemsProductoListener;
 import edu.usal.vista.Producto.AltaProductoVista;
 import edu.usal.vista.Producto.BajaProductoVista;
 import edu.usal.vista.Frame;
@@ -14,12 +17,13 @@ import edu.usal.vista.Frame;
 public class BtnBorrarProductoListener implements ActionListener{
 
 	Frame frame;
-	BajaProductoVista bajaProductoVista; 
-	
+	public static BajaProductoVista bajaProductoVista; 
+	ItemsProductoListener itemsProductoListener;
 	
 	public BtnBorrarProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		bajaProductoVista = new BajaProductoVista();
+		itemsProductoListener = new ItemsProductoListener();
+		bajaProductoVista = new BajaProductoVista(itemsProductoListener.valores());
 		
 	}
 	
@@ -34,6 +38,7 @@ public class BtnBorrarProductoListener implements ActionListener{
 		frame.getContentPane().setVisible(true);
 		
 		try {
+						
 			bajaProductoVista.addListener(new BtnEnviarBorrarProductoListener());
 			bajaProductoVista.addListenerVolver(new BtnVolver());
 		} catch (IOException | SQLException e1) {

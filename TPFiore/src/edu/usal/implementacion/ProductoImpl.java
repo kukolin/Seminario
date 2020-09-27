@@ -57,7 +57,7 @@ public class ProductoImpl implements ProductoInterfaz{
 		
 		Statement stm = con.createStatement();
 		
-		String sql = "DELETE FROM Producto WHERE ID_Producto = " + i;
+		String sql = "UPDATE Producto SET Borrado = 1 WHERE ID_Producto = " + i;
 		
 		stm.execute(sql);
 		
@@ -74,7 +74,7 @@ public class ProductoImpl implements ProductoInterfaz{
 		
 		Statement stm = con.createStatement();
 		
-		String sql = "SELECT * FROM Producto";
+		String sql = "SELECT * FROM Producto WHERE Borrado = 0";
 		
 		ResultSet rs = stm.executeQuery(sql);
 				

@@ -20,7 +20,7 @@ public class BtnEnviarBorrarProductoListener implements ActionListener{
 	
 	public BtnEnviarBorrarProductoListener() throws IOException, SQLException{
 		cliInter = ProductoFactory.GetImplementation("MSSQL");
-		bajaProducto = new BajaProductoVista();
+		bajaProducto = BtnBorrarProductoListener.bajaProductoVista;
 		mensaje = new Mensajes();
 
 	}
