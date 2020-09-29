@@ -59,7 +59,7 @@ public class Frame extends JFrame {
 //		Controlador controlador = new Controlador(this);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 784, 518);
+		setBounds(100, 100, 890, 622);
 		setLocationRelativeTo(null);
 
 		JMenuBar menuBar = new JMenuBar();

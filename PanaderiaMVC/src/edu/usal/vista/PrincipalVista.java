@@ -19,6 +19,7 @@ import edu.usal.controlador.Producto.Alta.BtnAltaProductoListener;
 import edu.usal.controlador.Producto.Baja.BtnBorrarProductoListener;
 import edu.usal.controlador.Producto.Listar.BtnListarProductoListener;
 import edu.usal.controlador.Producto.Modificar.BtnModificarProductoListener;
+import edu.usal.controlador.Venta.Alta.BtnAltaVentaListener;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -33,6 +34,8 @@ public class PrincipalVista extends JPanel {
 	private JButton btnListarProducto;
 	private JButton btnBorrarProducto;
 	private JButton btnModificarProducto;
+	private JButton btnAltaVenta;
+	private JButton btnListarVentas;
 
 	public PrincipalVista() {
 		setBackground(SystemColor.activeCaption);
@@ -53,6 +56,10 @@ public class PrincipalVista extends JPanel {
 		btnBorrarProducto = new JButton("Eliminar Producto");
 		
 		btnModificarProducto = new JButton("Modificar Producto");
+		
+		btnAltaVenta = new JButton("Alta Venta");
+		
+		btnListarVentas = new JButton("Listar Ventas");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -73,9 +80,15 @@ public class PrincipalVista extends JPanel {
 								.addComponent(btnListarClientes, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 							.addGap(18)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnListarProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnAltaProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(257, Short.MAX_VALUE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(btnListarProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(btnListarVentas, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
+								.addGroup(groupLayout.createSequentialGroup()
+									.addComponent(btnAltaProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+									.addGap(18)
+									.addComponent(btnAltaVenta, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)))))
+					.addContainerGap(134, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -83,11 +96,13 @@ public class PrincipalVista extends JPanel {
 					.addGap(111)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnAltaCliente)
-						.addComponent(btnAltaProducto))
+						.addComponent(btnAltaProducto)
+						.addComponent(btnAltaVenta))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnListarClientes)
-						.addComponent(btnListarProducto))
+						.addComponent(btnListarProducto)
+						.addComponent(btnListarVentas))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnBorrarClientes)
@@ -96,7 +111,7 @@ public class PrincipalVista extends JPanel {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnModificarClientes)
 						.addComponent(btnModificarProducto))
-					.addContainerGap(154, Short.MAX_VALUE))
+					.addContainerGap(76, Short.MAX_VALUE))
 		);
 		setLayout(groupLayout);
 
@@ -126,7 +141,7 @@ public class PrincipalVista extends JPanel {
 	public void addActionListeners8(BtnModificarProductoListener btnModificarProductoListener ) {
 		btnModificarProducto.addActionListener(btnModificarProductoListener);
 	}
-	
-	
-	
+	public void addActionListeners9(BtnAltaVentaListener btnAltaVentaListener ) {
+		btnAltaVenta.addActionListener(btnAltaVentaListener);
+	}
 }
