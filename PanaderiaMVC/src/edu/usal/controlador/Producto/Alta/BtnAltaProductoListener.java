@@ -21,7 +21,7 @@ public class BtnAltaProductoListener implements ActionListener{
 	
 	public BtnAltaProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaProductoVista = LoginControlador.altaProductoVista;
+		altaProductoVista = new AltaProductoVista();
 
 	}
 	

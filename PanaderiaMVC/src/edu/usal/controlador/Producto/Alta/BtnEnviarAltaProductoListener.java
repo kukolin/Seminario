@@ -22,7 +22,7 @@ public class BtnEnviarAltaProductoListener implements ActionListener{
 	ProductoInterfaz ProductoInterfaz;
 	
 	public BtnEnviarAltaProductoListener() throws IOException {
-		altaProductoVista = LoginControlador.altaProductoVista;
+		altaProductoVista = BtnAltaProductoListener.altaProductoVista;
 		ProductoInterfaz = ProductoFactory.GetImplementation("MSSQL");
 	}
 

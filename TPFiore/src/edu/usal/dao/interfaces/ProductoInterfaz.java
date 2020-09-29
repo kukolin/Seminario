@@ -14,5 +14,5 @@ public interface ProductoInterfaz {
 	
 	public boolean ModificarProducto(int idProducto, Producto producto) throws SQLException;
 	
-	
+	public boolean RestarStock(Integer idProducto, int cantidad) throws SQLException;
 }

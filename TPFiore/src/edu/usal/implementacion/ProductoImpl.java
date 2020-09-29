@@ -128,6 +128,26 @@ public class ProductoImpl implements ProductoInterfaz{
 		con.close();
 		return true;
 	}
+
+	@Override
+	public boolean RestarStock(Integer idProducto, int cantidad) throws SQLException {
+		
+		
+		con = Conexion.getConnection();
+		
+		Statement stm = con.createStatement();
+				  				  
+		String updateProducto = "UPDATE Producto SET Cantidad = (Cantidad - " + cantidad + ") WHERE ID_Producto = " + idProducto;
+		
+		stm.execute(updateProducto);
+		
+		stm.close();
+		
+		
+		con.close();
+		return true;
+		
+	}
 	
 
 }
