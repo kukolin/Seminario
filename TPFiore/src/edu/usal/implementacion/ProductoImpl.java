@@ -36,7 +36,7 @@ public class ProductoImpl implements ProductoInterfaz{
 		
 		String str = "INSERT INTO Producto VALUES (";
 		
-		str = str + "'" + nombre + "'," + precio + ", " + cantidad+ ",'" + descripcion + "')";
+		str = str + "'" + nombre + "'," + precio + ", " + cantidad+ ",'" + descripcion + "',0)";
 			
 		stm.execute(str);
 		
