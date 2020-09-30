@@ -36,7 +36,7 @@ public class ClienteImpl implements ClienteInterfaz {
 		String str = "INSERT INTO Cliente VALUES (";
 		
 		str = str + "'" + nombre + "','" + apellido + "'," + dni +", '" + fechaNac+ "','" 
-		+ direccion + "'," + telefono + ",'" + sexo + "','" + mail + "')";
+		+ direccion + "'," + telefono + ",'" + sexo + "','" + mail + "',0)";
 		
 		
 		
