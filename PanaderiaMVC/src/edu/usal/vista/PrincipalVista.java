@@ -15,6 +15,10 @@ import edu.usal.controlador.Cliente.Alta.BtnAltaClienteListener;
 import edu.usal.controlador.Cliente.Baja.BtnBorrarClienteListener;
 import edu.usal.controlador.Cliente.Listar.BtnListarClienteListener;
 import edu.usal.controlador.Cliente.Modificar.BtnModificarClienteListener;
+import edu.usal.controlador.Empleado.Alta.BtnAltaEmpleadoListener;
+import edu.usal.controlador.Empleado.Baja.BtnBorrarEmpleadoListener;
+import edu.usal.controlador.Empleado.Listar.BtnListarEmpleadoListener;
+import edu.usal.controlador.Empleado.Modificar.BtnModificarEmpleadoListener;
 import edu.usal.controlador.Producto.Alta.BtnAltaProductoListener;
 import edu.usal.controlador.Producto.Baja.BtnBorrarProductoListener;
 import edu.usal.controlador.Producto.Listar.BtnListarProductoListener;
@@ -29,13 +33,17 @@ public class PrincipalVista extends JPanel {
 	public JButton btnAltaCliente;
 	public JButton btnListarClientes;
 	public JButton btnBorrarClientes;
-	private JButton btnModificarClientes;
-	private JButton btnAltaProducto;
-	private JButton btnListarProducto;
-	private JButton btnBorrarProducto;
-	private JButton btnModificarProducto;
-	private JButton btnAltaVenta;
-	private JButton btnListarVentas;
+	public JButton btnModificarClientes;
+	public JButton btnAltaProducto;
+	public JButton btnListarProducto;
+	public JButton btnBorrarProducto;
+	public JButton btnModificarProducto;
+	public JButton btnAltaVenta;
+	public JButton btnListarVentas;
+	public JButton btnAltaEmpleado;
+	public JButton btnListarEmpleado;
+	public JButton btnBorrarEmpleado;
+	public JButton btnModificarEmpleado;
 
 	public PrincipalVista() {
 		setBackground(SystemColor.activeCaption);
@@ -60,6 +68,14 @@ public class PrincipalVista extends JPanel {
 		btnAltaVenta = new JButton("Alta Venta");
 		
 		btnListarVentas = new JButton("Listar Ventas");
+		
+		btnModificarEmpleado = new JButton("Modificar Empleado");
+		
+		btnBorrarEmpleado = new JButton("Eliminar Empleado");
+		
+		btnListarEmpleado = new JButton("Listar Empleado");
+		
+		btnAltaEmpleado = new JButton("Alta Empleado");
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -88,30 +104,45 @@ public class PrincipalVista extends JPanel {
 									.addComponent(btnAltaProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
 									.addGap(18)
 									.addComponent(btnAltaVenta, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)))))
-					.addContainerGap(134, Short.MAX_VALUE))
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnAltaEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnListarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnBorrarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnModificarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(115, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(111)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnAltaCliente)
-						.addComponent(btnAltaProducto)
-						.addComponent(btnAltaVenta))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnListarClientes)
-						.addComponent(btnListarProducto)
-						.addComponent(btnListarVentas))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnBorrarClientes)
-						.addComponent(btnBorrarProducto))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnModificarClientes)
-						.addComponent(btnModificarProducto))
-					.addContainerGap(76, Short.MAX_VALUE))
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnAltaEmpleado)
+							.addGap(18)
+							.addComponent(btnListarEmpleado)
+							.addGap(18)
+							.addComponent(btnBorrarEmpleado)
+							.addGap(13)
+							.addComponent(btnModificarEmpleado))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnAltaCliente)
+								.addComponent(btnAltaProducto)
+								.addComponent(btnAltaVenta))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnListarClientes)
+								.addComponent(btnListarProducto)
+								.addComponent(btnListarVentas))
+							.addGap(18)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnBorrarClientes)
+								.addComponent(btnBorrarProducto))
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnModificarClientes)
+								.addComponent(btnModificarProducto)))))
 		);
 		setLayout(groupLayout);
 
@@ -143,5 +174,23 @@ public class PrincipalVista extends JPanel {
 	}
 	public void addActionListeners9(BtnAltaVentaListener btnAltaVentaListener ) {
 		btnAltaVenta.addActionListener(btnAltaVentaListener);
+	}
+//	public void addActionListeners10(BtnListarVentaListener asd) {
+//		btnAltaVenta.addActionListener(asd);
+//	}
+	public void addActionListeners11(BtnAltaEmpleadoListener btnAltaEmpleadoListener ) {
+		btnAltaEmpleado.addActionListener(btnAltaEmpleadoListener);
+	}
+
+	public void addActionListeners12(BtnListarEmpleadoListener btnListarEmpleadoListener) {
+		btnListarEmpleado.addActionListener(btnListarEmpleadoListener);
+	}
+
+	public void addActionListeners13(BtnBorrarEmpleadoListener btnBorrarEmpleadoListener) {
+		btnBorrarEmpleado.addActionListener(btnBorrarEmpleadoListener);
+	}
+
+	public void addActionListeners14(BtnModificarEmpleadoListener btnModificarEmpleadoListener) {
+		btnModificarEmpleado.addActionListener(btnModificarEmpleadoListener);		
 	}
 }

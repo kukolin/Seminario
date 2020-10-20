@@ -12,6 +12,10 @@ import edu.usal.controlador.Cliente.Alta.BtnAltaClienteListener;
 import edu.usal.controlador.Cliente.Baja.BtnBorrarClienteListener;
 import edu.usal.controlador.Cliente.Listar.BtnListarClienteListener;
 import edu.usal.controlador.Cliente.Modificar.BtnModificarClienteListener;
+import edu.usal.controlador.Empleado.Alta.BtnAltaEmpleadoListener;
+import edu.usal.controlador.Empleado.Baja.BtnBorrarEmpleadoListener;
+import edu.usal.controlador.Empleado.Listar.BtnListarEmpleadoListener;
+import edu.usal.controlador.Empleado.Modificar.BtnModificarEmpleadoListener;
 import edu.usal.controlador.Producto.Alta.BtnAltaProductoListener;
 import edu.usal.controlador.Producto.Baja.BtnBorrarProductoListener;
 import edu.usal.controlador.Producto.Listar.BtnListarProductoListener;
@@ -74,6 +78,13 @@ public class LoginControlador implements ActionListener{
 				principalVista.addActionListeners8(new BtnModificarProductoListener());
 				
 				principalVista.addActionListeners9(new BtnAltaVentaListener());
+			//	principalVista.addActionListeners10(asd);
+				
+				principalVista.addActionListeners11(new BtnAltaEmpleadoListener());
+				principalVista.addActionListeners12(new BtnListarEmpleadoListener());
+				principalVista.addActionListeners13(new BtnBorrarEmpleadoListener());
+				principalVista.addActionListeners14(new BtnModificarEmpleadoListener());
+
 
 				
 			}
