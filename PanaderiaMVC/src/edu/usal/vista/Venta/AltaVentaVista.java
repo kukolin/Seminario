@@ -18,9 +18,9 @@ import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
 import edu.usal.controlador.Cliente.ItemsClienteListener;
+import edu.usal.controlador.Empleado.ItemsEmpleadoListener;
 import edu.usal.controlador.Producto.ItemsProductoListener;
 import edu.usal.controlador.Venta.Alta.HabilitarP2Listener;
-import edu.usal.controlador.Empleado.ItemsEmpleadoListener;
 
 import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
