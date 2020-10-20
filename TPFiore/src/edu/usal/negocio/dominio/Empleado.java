@@ -7,6 +7,7 @@ public class Empleado {
 	String nombre, apellido, direccion, sexo, puesto;
 	int dni, id, telefono;
 	Date fechaNac;
+	
 	public Empleado(String nombre, String apellido, String direccion, String sexo, String puesto, int dni, int id,
 			int telefono, Date fechaNac) {
 		super();

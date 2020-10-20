@@ -45,9 +45,13 @@ public class Pruebas {
 	ventaInterfaz = VentaFactory.GetImplementation("MSSQL");
 	empleadoInterfaz = EmpleadoFactory.GetImplementation("MSSQL");
 	
+	Date date = new Date(123123123L);
 	
-	System.out.print(ventaInterfaz.getUltimaVenta());
+//	System.out.print(ventaInterfaz.getUltimaVenta());
 
+	Empleado empleado = new Empleado("asd2", "asd", "asd", "M", "asd", 123, 0, 123, date);
+	
+//	empleadoInterfaz.AltaEmpleado(empleado);
 	
 	
 //	ArrayList<Empleado> al = new ArrayList<Empleado>();
@@ -59,8 +63,8 @@ public class Pruebas {
 //		
 //	}
 	
-	
-	
+//	empleadoInterfaz.ModificarEmpleado(2, empleado);
+//	empleadoInterfaz.BajaEmpleado(2);
 	
 //	DetalleVenta detalleVenta = new DetalleVenta(1,3,3,3);
 //	
