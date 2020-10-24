@@ -63,28 +63,31 @@ public class LoginControlador implements ActionListener{
 				frame.getContentPane().add(principalVista);			
 				frame.getContentPane().validate();
 				frame.getContentPane().setVisible(true);
+								
+//				principalVista.addActionListeners(new BtnAltaClienteListener());
+//				principalVista.addActionListeners2(new BtnListarClienteListener());
+//				principalVista.addActionListeners3(new BtnBorrarClienteListener());
+//				principalVista.addActionListeners4(new BtnModificarClienteListener());
+//				
+//				principalVista.addActionListeners5(new BtnAltaProductoListener());
+//				principalVista.addActionListeners6(new BtnListarProductoListener());
+//				principalVista.addActionListeners7(new BtnBorrarProductoListener());
+//				principalVista.addActionListeners8(new BtnModificarProductoListener());
+//				
+//				principalVista.addActionListeners9(new BtnAltaVentaListener());
+//				principalVista.addActionListeners10(asd);
+//				
+//				principalVista.addActionListeners11(new BtnAltaEmpleadoListener());
+//				principalVista.addActionListeners12(new BtnListarEmpleadoListener());
+//				principalVista.addActionListeners13(new BtnBorrarEmpleadoListener());
+//				principalVista.addActionListeners14(new BtnModificarEmpleadoListener());
 				
-				
-				JOptionPane.showMessageDialog(null, "Login correcto.", "Warning", JOptionPane.WARNING_MESSAGE);
-				
-				principalVista.addActionListeners(new BtnAltaClienteListener());
-				principalVista.addActionListeners2(new BtnListarClienteListener());
-				principalVista.addActionListeners3(new BtnBorrarClienteListener());
-				principalVista.addActionListeners4(new BtnModificarClienteListener());
-				
-				principalVista.addActionListeners5(new BtnAltaProductoListener());
-				principalVista.addActionListeners6(new BtnListarProductoListener());
-				principalVista.addActionListeners7(new BtnBorrarProductoListener());
-				principalVista.addActionListeners8(new BtnModificarProductoListener());
-				
-				principalVista.addActionListeners9(new BtnAltaVentaListener());
-			//	principalVista.addActionListeners10(asd);
-				
-				principalVista.addActionListeners11(new BtnAltaEmpleadoListener());
-				principalVista.addActionListeners12(new BtnListarEmpleadoListener());
-				principalVista.addActionListeners13(new BtnBorrarEmpleadoListener());
-				principalVista.addActionListeners14(new BtnModificarEmpleadoListener());
+				frame.mnNewMenu_1.setVisible(true);
+				frame.mnNewMenu_2.setVisible(true);
+				frame.mnNewMenu_3.setVisible(true);
+				frame.mnNewMenu_4.setVisible(true);
 
+				JOptionPane.showMessageDialog(null, "Login correcto.", "Warning", JOptionPane.WARNING_MESSAGE);
 
 				
 			}
@@ -92,7 +95,7 @@ public class LoginControlador implements ActionListener{
 			else JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.", "Warning", JOptionPane.WARNING_MESSAGE);	
 			
 			
-		} catch (NumberFormatException | SQLException | IOException e1) {
+		} catch (NumberFormatException | SQLException e1) {
 			e1.printStackTrace();
 		}
 	

@@ -32,8 +32,8 @@ public class ListarEmpleadoVista extends JPanel {
 
 		modelo = new DefaultTableModel();
 		btnListar = new JButton("Actualizar");
-		btnListar.setBackground(new Color(0, 0, 0));
-		btnListar.setForeground(Color.ORANGE);
+		btnListar.setBackground(Color.LIGHT_GRAY);
+		btnListar.setForeground(new Color(0, 51, 153));
 		btnListar.setFont(new Font("Tahoma", Font.BOLD, 14));
 		
 		JScrollPane scrollPane = new JScrollPane();
