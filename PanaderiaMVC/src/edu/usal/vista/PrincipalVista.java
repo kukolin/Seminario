@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import edu.usal.controlador.Cliente.Alta.BtnAltaClienteListener;
 import edu.usal.controlador.Cliente.Baja.BtnBorrarClienteListener;
@@ -47,7 +49,6 @@ public class PrincipalVista extends JPanel {
 
 	public PrincipalVista() {
 		setBackground(SystemColor.activeCaption);
-
 		
 		btnAltaCliente = new JButton("Alta Cliente");
 		
