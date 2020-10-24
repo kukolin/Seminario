@@ -30,168 +30,47 @@ import edu.usal.controlador.Venta.Alta.BtnAltaVentaListener;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
+import javax.swing.SwingConstants;
 
 public class PrincipalVista extends JPanel {
-	public JButton btnAltaCliente;
-	public JButton btnListarClientes;
-	public JButton btnBorrarClientes;
-	public JButton btnModificarClientes;
-	public JButton btnAltaProducto;
-	public JButton btnListarProducto;
-	public JButton btnBorrarProducto;
-	public JButton btnModificarProducto;
-	public JButton btnAltaVenta;
-	public JButton btnListarVentas;
-	public JButton btnAltaEmpleado;
-	public JButton btnListarEmpleado;
-	public JButton btnBorrarEmpleado;
-	public JButton btnModificarEmpleado;
 
 	public PrincipalVista() {
 		setBackground(SystemColor.activeCaption);
 		
-		btnAltaCliente = new JButton("Alta Cliente");
+		JLabel lblSeleccioneUnaOpcin = new JLabel("Seleccione una opci\u00F3n del men\u00FA de arriba para continuar...");
+		lblSeleccioneUnaOpcin.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSeleccioneUnaOpcin.setForeground(new Color(0, 51, 153));
+		lblSeleccioneUnaOpcin.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		btnListarClientes = new JButton("Listar Clientes");
+		JLabel lblBienvenido = new JLabel("   Bienvenido! ");
+		lblBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBienvenido.setForeground(new Color(0, 51, 153));
 		
-		btnBorrarClientes = new JButton("Eliminar Clientes");
-		
-		btnModificarClientes = new JButton("Modificar Clientes");
-		
-		btnAltaProducto = new JButton("Alta Producto");
-		
-		btnListarProducto = new JButton("Listar Productos");
-		
-		btnBorrarProducto = new JButton("Eliminar Producto");
-		
-		btnModificarProducto = new JButton("Modificar Producto");
-		
-		btnAltaVenta = new JButton("Alta Venta");
-		
-		btnListarVentas = new JButton("Listar Ventas");
-		
-		btnModificarEmpleado = new JButton("Modificar Empleado");
-		
-		btnBorrarEmpleado = new JButton("Eliminar Empleado");
-		
-		btnListarEmpleado = new JButton("Listar Empleado");
-		
-		btnAltaEmpleado = new JButton("Alta Empleado");
+		lblBienvenido.setFont(new Font("Harlow Solid Italic", Font.ITALIC, 26));
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(57)
+					.addComponent(lblSeleccioneUnaOpcin, GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+					.addGap(48))
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(165)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnModificarClientes, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(btnModificarProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnBorrarClientes, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(btnBorrarProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(btnAltaCliente, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(btnListarClientes, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(btnListarProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(btnListarVentas, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup()
-									.addComponent(btnAltaProducto, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-									.addGap(18)
-									.addComponent(btnAltaVenta, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)))))
-					.addGap(18)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnAltaEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnListarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnBorrarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnModificarEmpleado, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(115, Short.MAX_VALUE))
+					.addGap(240)
+					.addComponent(lblBienvenido, GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+					.addGap(247))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(111)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(btnAltaEmpleado)
-							.addGap(18)
-							.addComponent(btnListarEmpleado)
-							.addGap(18)
-							.addComponent(btnBorrarEmpleado)
-							.addGap(13)
-							.addComponent(btnModificarEmpleado))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnAltaCliente)
-								.addComponent(btnAltaProducto)
-								.addComponent(btnAltaVenta))
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnListarClientes)
-								.addComponent(btnListarProducto)
-								.addComponent(btnListarVentas))
-							.addGap(18)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnBorrarClientes)
-								.addComponent(btnBorrarProducto))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnModificarClientes)
-								.addComponent(btnModificarProducto)))))
+					.addGap(85)
+					.addComponent(lblBienvenido, GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+					.addGap(68)
+					.addComponent(lblSeleccioneUnaOpcin, GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+					.addGap(201))
 		);
 		setLayout(groupLayout);
 
 	}
 	
-	public void addActionListeners(BtnAltaClienteListener btnAltaClienteListener) {
-		btnAltaCliente.addActionListener(btnAltaClienteListener);		
-	}
-	public void addActionListeners2(BtnListarClienteListener btnListarClienteListener) {
-		btnListarClientes.addActionListener(btnListarClienteListener);
-	}
-	public void addActionListeners3(BtnBorrarClienteListener btnBorrarClienteListener) {
-		btnBorrarClientes.addActionListener(btnBorrarClienteListener);
-	}
-	public void addActionListeners4(BtnModificarClienteListener btnModificarClienteListener) {
-		btnModificarClientes.addActionListener(btnModificarClienteListener);
-	}
-	public void addActionListeners5(BtnAltaProductoListener btnAltaProductoListener ) {
-		btnAltaProducto.addActionListener(btnAltaProductoListener);
-	}
-	public void addActionListeners6(BtnListarProductoListener btnListarProductoListener ) {
-		btnListarProducto.addActionListener(btnListarProductoListener);
-	}
-	public void addActionListeners7(BtnBorrarProductoListener btnBorrarProductoListener ) {
-		btnBorrarProducto.addActionListener(btnBorrarProductoListener);
-	}
-	public void addActionListeners8(BtnModificarProductoListener btnModificarProductoListener ) {
-		btnModificarProducto.addActionListener(btnModificarProductoListener);
-	}
-	public void addActionListeners9(BtnAltaVentaListener btnAltaVentaListener ) {
-		btnAltaVenta.addActionListener(btnAltaVentaListener);
-	}
-//	public void addActionListeners10(BtnListarVentaListener asd) {
-//		btnAltaVenta.addActionListener(asd);
-//	}
-	public void addActionListeners11(BtnAltaEmpleadoListener btnAltaEmpleadoListener ) {
-		btnAltaEmpleado.addActionListener(btnAltaEmpleadoListener);
-	}
 
-	public void addActionListeners12(BtnListarEmpleadoListener btnListarEmpleadoListener) {
-		btnListarEmpleado.addActionListener(btnListarEmpleadoListener);
-	}
-
-	public void addActionListeners13(BtnBorrarEmpleadoListener btnBorrarEmpleadoListener) {
-		btnBorrarEmpleado.addActionListener(btnBorrarEmpleadoListener);
-	}
-
-	public void addActionListeners14(BtnModificarEmpleadoListener btnModificarEmpleadoListener) {
-		btnModificarEmpleado.addActionListener(btnModificarEmpleadoListener);		
-	}
 }
