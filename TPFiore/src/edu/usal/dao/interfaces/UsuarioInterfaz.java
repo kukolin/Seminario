@@ -7,5 +7,6 @@ import edu.usal.negocio.dominio.Usuario;
 public interface UsuarioInterfaz {
 
 	public boolean verificarUsuario (Usuario usuario) throws SQLException;
-	
+	public boolean AltaUsuario (Usuario usuario) throws SQLException;
+
 }

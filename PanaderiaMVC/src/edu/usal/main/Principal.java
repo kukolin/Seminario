@@ -17,11 +17,11 @@ public class Principal {
 					
 					Frame frame = new Frame();
 					Controlador controlador = new Controlador(frame);
-					
+
 					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
 					frame.setVisible(true);
-					
+
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
