@@ -16,6 +16,7 @@ import edu.usal.controlador.Producto.Alta.BtnAltaProductoListener;
 import edu.usal.controlador.Producto.Baja.BtnBorrarProductoListener;
 import edu.usal.controlador.Producto.Listar.BtnListarProductoListener;
 import edu.usal.controlador.Producto.Modificar.BtnModificarProductoListener;
+import edu.usal.controlador.Registrarse.BtnAltaUsuarioListener;
 import edu.usal.controlador.Venta.Alta.BtnAltaVentaListener;
 import edu.usal.dao.factory.UsuarioFactory;
 import edu.usal.dao.interfaces.UsuarioInterfaz;
@@ -59,6 +60,8 @@ public class Controlador extends JFrame {
 		this.frame.addActionListeners12(new BtnListarEmpleadoListener());
 		this.frame.addActionListeners13(new BtnBorrarEmpleadoListener());
 		this.frame.addActionListeners14(new BtnModificarEmpleadoListener());
+		
+		this.frame.addActionListeners15(new BtnAltaUsuarioListener());
 		
 		
 		

@@ -24,6 +24,7 @@ import edu.usal.controlador.Producto.Alta.BtnAltaProductoListener;
 import edu.usal.controlador.Producto.Baja.BtnBorrarProductoListener;
 import edu.usal.controlador.Producto.Listar.BtnListarProductoListener;
 import edu.usal.controlador.Producto.Modificar.BtnModificarProductoListener;
+import edu.usal.controlador.Registrarse.BtnAltaUsuarioListener;
 import edu.usal.controlador.Venta.Alta.BtnAltaVentaListener;
 
 import javax.swing.JMenuBar;
@@ -73,6 +74,7 @@ public class Frame extends JFrame {
 	public JMenuItem mntmModificarproducto;
 	public JMenu mnNewMenu_4;
 	public JMenuItem mntmAltaVenta;
+	public JButton btnRegistrarse;
 
 	/**
 	 * Launch the application.
@@ -196,15 +198,27 @@ public class Frame extends JFrame {
 		btnNewButton = new JButton("Entrar");
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setForeground(Color.BLACK);
+		
+		btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setForeground(Color.BLACK);
+		btnRegistrarse.setBackground(Color.WHITE);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
-							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+							.addGap(23)
+							.addComponent(lblBienvenido, GroupLayout.DEFAULT_SIZE, 381, Short.MAX_VALUE)
+							.addGap(201))
+						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(57)
+							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+									.addComponent(btnRegistrarse, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED, 373, Short.MAX_VALUE)
+									.addComponent(btnNewButton))
 								.addGroup(gl_panel.createSequentialGroup()
-									.addGap(57)
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 										.addComponent(lblNewLabel_1)
 										.addComponent(lblNewLabel_2))
@@ -212,17 +226,9 @@ public class Frame extends JFrame {
 									.addGroup(gl_panel.createParallelGroup(Alignment.LEADING, false)
 										.addComponent(passwordField)
 										.addComponent(textPane, GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
-									.addPreferredGap(ComponentPlacement.RELATED, 24, Short.MAX_VALUE))
-								.addGroup(gl_panel.createSequentialGroup()
-									.addContainerGap()
-									.addComponent(btnNewButton)))
-							.addPreferredGap(ComponentPlacement.UNRELATED))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addGap(23)
-							.addComponent(lblBienvenido, GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-							.addGap(201)))
+									.addPreferredGap(ComponentPlacement.RELATED, 184, Short.MAX_VALUE)))))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
 					.addGap(70))
 		);
 		gl_panel.setVerticalGroup(
@@ -241,10 +247,12 @@ public class Frame extends JFrame {
 										.addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 										.addComponent(lblNewLabel_2))
 									.addGap(68)
-									.addComponent(btnNewButton))
+									.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+										.addComponent(btnNewButton)
+										.addComponent(btnRegistrarse)))
 								.addComponent(lblNewLabel_1)))
 						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(97, Short.MAX_VALUE))
+					.addContainerGap(268, Short.MAX_VALUE))
 		);
 		panel.setLayout(gl_panel);
 	}
@@ -300,4 +308,9 @@ public class Frame extends JFrame {
 	public void addActionListeners14(BtnModificarEmpleadoListener btnModificarEmpleadoListener) {
 		mntmModificarEmpleado.addActionListener(btnModificarEmpleadoListener);		
 	}
+	
+	public void addActionListeners15(BtnAltaUsuarioListener btnAltaUsuarioListener) {
+		btnRegistrarse.addActionListener(btnAltaUsuarioListener);		
+	}
+	
 }

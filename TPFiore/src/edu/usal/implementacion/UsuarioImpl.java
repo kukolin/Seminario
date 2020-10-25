@@ -1,6 +1,7 @@
 package edu.usal.implementacion;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -37,6 +38,33 @@ public class UsuarioImpl implements UsuarioInterfaz{
 		con.close();
 		
 		return false;
+	}
+
+	@Override
+	public boolean AltaUsuario(Usuario usuario) throws SQLException {
+		
+		String nombre = usuario.getNombreUsuario();
+		String password = usuario.getPassword();
+
+		
+		
+		con = Conexion.getConnection();
+		
+		Statement stm = con.createStatement();
+		
+		String str = "INSERT INTO Usuario VALUES (";
+		
+		str = str + "'" + nombre + "','" + password + "',0)";
+		
+		
+		
+		stm.execute(str);
+		
+		stm.close();
+		
+		
+		con.close();
+		return true;
 	}
 
 }
