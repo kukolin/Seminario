@@ -21,7 +21,7 @@ public class Mensajes {
 
 	public void AcercaDe() {
 		
-		JOptionPane.showMessageDialog(null,"Código creado por: -Di Gregorio, Fiore \n\n Versión 0.1", "Acerca de...", JOptionPane.INFORMATION_MESSAGE);	
+		JOptionPane.showMessageDialog(null,"Código creado por: -Di Gregorio, Fiore \n\n Versión 1.3.PerdiLaCuenta", "Acerca de...", JOptionPane.INFORMATION_MESSAGE);	
 		
 	}
 	

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
@@ -44,20 +45,27 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 		int idSelec = alClientes.get(modificarClienteVista.comboBox.getSelectedIndex()).getIdCliente();
 		
 		try {
+		java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 			
+		String nombre = modificarClienteVista.tNombre.getText();
+		String apellido = modificarClienteVista.tApellido.getText();
+		int dni = Integer.parseInt(modificarClienteVista.tDni.getText());
+		String direccion = modificarClienteVista.tDireccion.getText();
+		String mail = modificarClienteVista.tEmail.getText();
+		int telefono = Integer.parseInt(modificarClienteVista.tTelefono.getText());
+		
+		String pattern = "dd-MM-yyyy";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		Date dateNac = simpleDateFormat.parse(modificarClienteVista.tFechaNac.getText());
+		java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
+		
 			if(modificarClienteVista.tDni.getText().matches("[0-9]+") && modificarClienteVista.tTelefono.getText().matches("[0-9]+")) {
-			
-			String nombre = modificarClienteVista.tNombre.getText();
-			String apellido = modificarClienteVista.tApellido.getText();
-			int dni = Integer.parseInt(modificarClienteVista.tDni.getText());
-			String direccion = modificarClienteVista.tDireccion.getText();
-			String mail = modificarClienteVista.tEmail.getText();
-			int telefono = Integer.parseInt(modificarClienteVista.tTelefono.getText());
-			
-			String pattern = "dd-MM-yyyy";
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-			Date dateNac = simpleDateFormat.parse(modificarClienteVista.tFechaNac.getText());
-			java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
+				if(modificarClienteVista.tDni.getText().matches("[0-9]{7,8}")) {
+					if(modificarClienteVista.tEmail.getText().matches(".+[@]{1}.+[.]{1}.+")){
+						if(dateNac2.before(hoy)) {
+							
+						
+
 			
 			String sexo = "M";
 			if(modificarClienteVista.rdbtnM.isSelected())  sexo = "M";
@@ -68,14 +76,26 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 			
 			clienteInterfaz.ModificarCliente(idSelec, cliente);
 			
-			}
-			else {
-				new Mensajes().ErrorNumerico();
-			}
-			
-		} catch (SQLException | ParseException e1) {
-			e1.printStackTrace();
-		}
+						}
+						
+						else {
+							JOptionPane.showMessageDialog(null, "La fecha de nacimiento no puede ser posterior a la de hoy!.");		
+						}
+						}else {
+							JOptionPane.showMessageDialog(null, "Ingrese un email válido.");		
+						}
+						}else{
+							JOptionPane.showMessageDialog(null, "Ingrese un DNI válido.");
+						}
+						}
+						else {
+									new Mensajes().ErrorNumerico();
+						}
+						
+					} catch (SQLException | ParseException e1) {
+						//e1.printStackTrace();
+						JOptionPane.showMessageDialog(null, "No se pudo registrar en la base de datos. Verifique que el DNI no exista.");
+					}
 		
 		
 		
