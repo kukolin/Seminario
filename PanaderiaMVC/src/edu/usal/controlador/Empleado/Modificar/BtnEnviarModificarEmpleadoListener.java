@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
@@ -44,9 +45,6 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 		int idSelec = alEmpleados.get(modificarEmpleadoVista.comboBox.getSelectedIndex()).getId();
 		
 		try {
-			
-			if(modificarEmpleadoVista.tDni.getText().matches("[0-9]+") && modificarEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
-			
 			String nombre = modificarEmpleadoVista.tNombre.getText();
 			String apellido = modificarEmpleadoVista.tApellido.getText();
 			int dni = Integer.parseInt(modificarEmpleadoVista.tDni.getText());
@@ -58,6 +56,13 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 			Date dateNac = simpleDateFormat.parse(modificarEmpleadoVista.tFechaNac.getText());
 			java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
+			java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+			if(modificarEmpleadoVista.tDni.getText().matches("[0-9]+") && modificarEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
+				if(modificarEmpleadoVista.tDni.getText().matches("[0-9]{7,8}")) {
+					if(dateNac2.before(hoy)) {
+			
+
 			
 			String sexo = "M";
 			if(modificarEmpleadoVista.rdbtnM.isSelected())  sexo = "M";
@@ -67,15 +72,22 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 			Empleado empleado = new Empleado(nombre, apellido, direccion, sexo, puesto, dni, 0, telefono, dateNac2);
 			empleadoInterfaz.ModificarEmpleado(idSelec, empleado);
 			
-			}
-			else {
-				new Mensajes().ErrorNumerico();
-			}
+					}
+					
+					else {
+						JOptionPane.showMessageDialog(null, "La fecha de nacimiento no puede ser posterior a la de hoy!.");		
+					}
+					}else{
+						JOptionPane.showMessageDialog(null, "Ingrese un DNI válido.");
+					}
+					}
+					else {
+								new Mensajes().ErrorNumerico();
+					}
 			
 		} catch (SQLException | ParseException e1) {
-			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No se pudo registrar en la base de datos. Verifique que el DNI no exista.");
 		}
-		
 		
 		
 		
