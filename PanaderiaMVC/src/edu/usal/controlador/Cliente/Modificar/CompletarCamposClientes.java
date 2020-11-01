@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
@@ -18,7 +19,7 @@ public class CompletarCamposClientes {
 
 	public CompletarCamposClientes() throws IOException {
 		
-		modificarClienteVista = BtnModificarClienteListener.modificarClienteVista;
+		modificarClienteVista = Controlador.modificarClienteVista;
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
 		
 	}

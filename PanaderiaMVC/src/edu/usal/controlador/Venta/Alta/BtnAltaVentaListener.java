@@ -19,7 +19,7 @@ public class BtnAltaVentaListener implements ActionListener{
 	
 	public BtnAltaVentaListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaVentaVista = new AltaVentaVista();
+		altaVentaVista = Controlador.altaVentaVista;
 
 	}
 	
@@ -34,19 +34,14 @@ public class BtnAltaVentaListener implements ActionListener{
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
-		try {
-		altaVentaVista.addListener(new BtnEnviarAltaVentaListener());
+//		altaVentaVista.addListener(new BtnEnviarAltaVentaListener());
 		altaVentaVista.addListenerVolver(new BtnVolver());
 		altaVentaVista.addListenerHabilitarP2(new HabilitarP2Listener());
 		altaVentaVista.addListenerHabilitarP3(new HabilitarP3Listener());
 		altaVentaVista.addListenerHabilitarP4(new HabilitarP4Listener());
 		altaVentaVista.addListenerHabilitarP5(new HabilitarP5Listener());
 		
-		
-		
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+	
 		
 		
 	}

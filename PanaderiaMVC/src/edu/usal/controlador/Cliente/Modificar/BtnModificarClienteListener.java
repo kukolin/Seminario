@@ -17,12 +17,12 @@ import edu.usal.vista.Cliente.ModificarClienteVista;
 public class BtnModificarClienteListener implements ActionListener{
 
 	Frame frame;
-	static ModificarClienteVista modificarClienteVista;
+	ModificarClienteVista modificarClienteVista;
 	CompletarCamposClientes completarCamposClientes;
 	
 	public BtnModificarClienteListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		modificarClienteVista = new ModificarClienteVista();
+		modificarClienteVista = Controlador.modificarClienteVista;
 		completarCamposClientes = new CompletarCamposClientes();
 
 	}
@@ -40,16 +40,16 @@ public class BtnModificarClienteListener implements ActionListener{
 		completarCamposClientes.completar(0);
 
 		
-			try {
+//			try {
 				
-				modificarClienteVista.addListenerComboBox(new ModificarClienteComboListener());
-				modificarClienteVista.addListener(new BtnEnviarModificarClienteListener());
+//				modificarClienteVista.addListenerComboBox(new ModificarClienteComboListener());
+//				modificarClienteVista.addListener(new BtnEnviarModificarClienteListener());
 				modificarClienteVista.addListenerVolver(new BtnVolver());
 
-			} catch (IOException e1) {
-				
-				e1.printStackTrace();
-			}
+//			} catch (IOException e1) {
+//				
+//				e1.printStackTrace();
+//			}
 
 		  
 	}

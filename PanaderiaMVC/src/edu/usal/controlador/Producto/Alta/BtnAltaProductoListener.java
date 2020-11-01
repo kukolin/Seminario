@@ -21,7 +21,7 @@ public class BtnAltaProductoListener implements ActionListener{
 	
 	public BtnAltaProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaProductoVista = new AltaProductoVista();
+		altaProductoVista = Controlador.altaProductoVista;
 
 	}
 	
@@ -36,12 +36,9 @@ public class BtnAltaProductoListener implements ActionListener{
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
-		try {
-			altaProductoVista.addListener(new BtnEnviarAltaProductoListener());
+	//		altaProductoVista.addListener(new BtnEnviarAltaProductoListener());
 			altaProductoVista.addListenerVolver(new BtnVolver());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+
 		
 		
 	}

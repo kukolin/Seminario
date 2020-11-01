@@ -22,7 +22,7 @@ public class BtnModificarEmpleadoListener implements ActionListener{
 	
 	public BtnModificarEmpleadoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		modificarEmpleadoVista = new ModificarEmpleadoVista();
+		modificarEmpleadoVista = Controlador.modificarEmpleadoVista;
 		completarCamposEmpleados = new CompletarCamposEmpleados();
 
 	}
@@ -43,7 +43,7 @@ public class BtnModificarEmpleadoListener implements ActionListener{
 			try {
 				
 				modificarEmpleadoVista.addListenerComboBox(new ModificarEmpleadoComboListener());
-				modificarEmpleadoVista.addListener(new BtnEnviarModificarEmpleadoListener());
+//				modificarEmpleadoVista.addListener(new BtnEnviarModificarEmpleadoListener());
 				modificarEmpleadoVista.addListenerVolver(new BtnVolver());
 
 			} catch (IOException e1) {
