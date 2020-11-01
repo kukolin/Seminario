@@ -20,7 +20,7 @@ public class BtnAltaClienteListener implements ActionListener{
 	
 	public BtnAltaClienteListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		altaClienteVista = new AltaClienteVista();
+		altaClienteVista = Controlador.altaClienteVista;
 
 	}
 	
@@ -35,12 +35,9 @@ public class BtnAltaClienteListener implements ActionListener{
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
-		try {
-			altaClienteVista.addListener(new BtnEnviarAltaClienteListener());
+//			altaClienteVista.addListener(new BtnEnviarAltaClienteListener());
 			altaClienteVista.addListenerVolver(new BtnVolver());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+
 		
 		
 	}

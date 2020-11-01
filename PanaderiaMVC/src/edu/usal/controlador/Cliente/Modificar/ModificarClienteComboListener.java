@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
@@ -19,9 +20,9 @@ public class ModificarClienteComboListener implements ItemListener{
 	
 	public ModificarClienteComboListener() throws IOException {
 
-		modificarClienteVista = BtnModificarClienteListener.modificarClienteVista;
+		modificarClienteVista = Controlador.modificarClienteVista;
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
-		camposClientes = new CompletarCamposClientes();
+		camposClientes = Controlador.camposClientes;
 		
 	}
 	

@@ -26,7 +26,7 @@ public class BajaProductoVista extends JPanel {
 	ItemsProductoListener itemsProductoListener;
 	public JButton btnVolver;
 
-	public BajaProductoVista(String[] strValores) throws IOException, SQLException {
+	public BajaProductoVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
 		itemsProductoListener = new ItemsProductoListener();
@@ -42,7 +42,7 @@ public class BajaProductoVista extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		
-		comboBox = new JComboBox(strValores);
+		comboBox = new JComboBox();
 		
 		btnVolver = new JButton("Volver");
 		GroupLayout groupLayout = new GroupLayout(this);

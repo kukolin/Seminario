@@ -25,13 +25,11 @@ import javax.swing.JComboBox;
 public class BajaEmpleadoVista extends JPanel {
 	public JButton btnEnviar;
 	public JComboBox comboBox;
-	ItemsEmpleadoListener itemsEmpleadoListener;
 	public JButton btnVolver;
 
 	public BajaEmpleadoVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		itemsEmpleadoListener = new ItemsEmpleadoListener();
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(new Color(0, 0, 0));
 		btnEnviar.setForeground(Color.ORANGE);
@@ -44,7 +42,7 @@ public class BajaEmpleadoVista extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		
-		comboBox = new JComboBox(itemsEmpleadoListener.valores());
+		comboBox = new JComboBox();
 		
 		btnVolver = new JButton("Volver");
 		GroupLayout groupLayout = new GroupLayout(this);

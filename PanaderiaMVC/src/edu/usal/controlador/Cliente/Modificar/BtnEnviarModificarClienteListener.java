@@ -12,6 +12,7 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
@@ -26,7 +27,7 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 	public BtnEnviarModificarClienteListener() throws IOException {
 
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
-		modificarClienteVista = BtnModificarClienteListener.modificarClienteVista;
+		modificarClienteVista = Controlador.modificarClienteVista;
 		
 	}
 	

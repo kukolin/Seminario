@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.EmpleadoFactory;
 import edu.usal.dao.interfaces.EmpleadoInterfaz;
 import edu.usal.negocio.dominio.Empleado;
@@ -20,7 +21,7 @@ public class BtnEnviarBorrarEmpleadoListener implements ActionListener{
 	
 	public BtnEnviarBorrarEmpleadoListener() throws IOException, SQLException{
 		cliInter = EmpleadoFactory.GetImplementation("MSSQL");
-		bajaEmpleado = new BajaEmpleadoVista();
+		bajaEmpleado = Controlador.bajaEmpleadoVista;
 		mensaje = new Mensajes();
 
 	}
@@ -37,8 +38,8 @@ public class BtnEnviarBorrarEmpleadoListener implements ActionListener{
 			e1.printStackTrace();
 			mensaje.Verificar();
 		}
-		
-		int idSelec = alEmpleados.get(bajaEmpleado.comboBox.getSelectedIndex()).getId();
+		int index = bajaEmpleado.comboBox.getSelectedIndex();
+		int idSelec = alEmpleados.get(index).getId();
 		
 		try {
 			

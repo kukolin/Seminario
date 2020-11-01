@@ -25,13 +25,14 @@ import javax.swing.JComboBox;
 public class BajaClienteVista extends JPanel {
 	public JButton btnEnviar;
 	public JComboBox comboBox;
-	ItemsClienteListener itemsClienteListener;
+//	ItemsClienteListener itemsClienteListener;
 	public JButton btnVolver;
 
 	public BajaClienteVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		itemsClienteListener = new ItemsClienteListener();
+//		itemsClienteListener = new ItemsClienteListener();
+		
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(new Color(0, 0, 0));
 		btnEnviar.setForeground(Color.ORANGE);
@@ -44,7 +45,7 @@ public class BajaClienteVista extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		
-		comboBox = new JComboBox(itemsClienteListener.valores());
+		comboBox = new JComboBox();
 		
 		btnVolver = new JButton("Volver");
 		GroupLayout groupLayout = new GroupLayout(this);

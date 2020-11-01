@@ -16,7 +16,7 @@ public class BtnListarEmpleadoListener implements ActionListener {
 
 	public BtnListarEmpleadoListener() throws IOException {
 		frame = Controlador.frame;
-		listarEmpleadoVista = new ListarEmpleadoVista();
+		listarEmpleadoVista = Controlador.listarEmpleadoVista;
 	}
 
 	@Override
@@ -30,13 +30,9 @@ public class BtnListarEmpleadoListener implements ActionListener {
 		frame.getContentPane().setVisible(true);
 
 		
-		  try {
-			listarEmpleadoVista.addListener(new BtnEnviarListarEmpleadoListener());
+//			listarEmpleadoVista.addListener(new BtnEnviarListarEmpleadoListener());
 			listarEmpleadoVista.addListenerVolver(new BtnVolver());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		  
+ 
 		 
 	}
 

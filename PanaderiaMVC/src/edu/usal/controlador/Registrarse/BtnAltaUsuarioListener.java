@@ -19,7 +19,7 @@ public class BtnAltaUsuarioListener implements ActionListener{
 	
 	public BtnAltaUsuarioListener() throws IOException, SQLException {
 		frame = Controlador.frame;
-		registroVista = new RegistroVista();
+		registroVista = Controlador.registroVista;
 
 	}
 	
@@ -34,12 +34,10 @@ public class BtnAltaUsuarioListener implements ActionListener{
 		frame.getContentPane().validate();
 		frame.getContentPane().setVisible(true);
 		
-		try {
-			registroVista.addListener(new BtnEnviarAltaUsuarioListener());
+
+//			registroVista.addListener(new BtnEnviarAltaUsuarioListener());
 			registroVista.addListenerVolver(new BtnVolver2());
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
+
 		
 		
 	}

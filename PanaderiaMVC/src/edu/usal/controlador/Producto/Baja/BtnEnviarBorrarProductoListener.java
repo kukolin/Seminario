@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ProductoFactory;
 import edu.usal.dao.interfaces.ProductoInterfaz;
 import edu.usal.negocio.dominio.Producto;
@@ -20,7 +21,7 @@ public class BtnEnviarBorrarProductoListener implements ActionListener{
 	
 	public BtnEnviarBorrarProductoListener() throws IOException, SQLException{
 		cliInter = ProductoFactory.GetImplementation("MSSQL");
-		bajaProducto = BtnBorrarProductoListener.bajaProductoVista;
+		bajaProducto = Controlador.bajaProductoVista;
 		mensaje = new Mensajes();
 
 	}

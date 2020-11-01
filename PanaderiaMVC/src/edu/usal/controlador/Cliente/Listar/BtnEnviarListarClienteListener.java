@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.interfaces.ClienteInterfaz;
 import edu.usal.negocio.dominio.Cliente;
@@ -17,11 +18,11 @@ public class BtnEnviarListarClienteListener implements ActionListener{
 	ClienteInterfaz clienteInterfaz;
 	
 	public BtnEnviarListarClienteListener() throws IOException {
-		listarClienteVista = BtnListarClienteListener.listarClienteVista;
+		listarClienteVista = Controlador.listarClienteVista;
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
-
+		
 	}
-	
+		
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
