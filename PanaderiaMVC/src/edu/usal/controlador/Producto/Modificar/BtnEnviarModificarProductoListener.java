@@ -12,6 +12,7 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ProductoFactory;
 import edu.usal.dao.interfaces.ProductoInterfaz;
 import edu.usal.negocio.dominio.Producto;
@@ -26,7 +27,7 @@ public class BtnEnviarModificarProductoListener implements ActionListener {
 	public BtnEnviarModificarProductoListener() throws IOException {
 
 		ProductoInterfaz = ProductoFactory.GetImplementation("MSSQL");
-		modificarProductoVista = BtnModificarProductoListener.modificarProductoVista;
+		modificarProductoVista = Controlador.modificarProductoVista;
 		
 	}
 	

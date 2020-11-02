@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.IconifyAction;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ClienteFactory;
 import edu.usal.dao.factory.DetalleVentaFactory;
 import edu.usal.dao.factory.EmpleadoFactory;
@@ -41,7 +42,7 @@ public class BtnEnviarAltaVentaListener implements ActionListener{
 	DetalleVentaInterfaz detalleVentaInterfaz;
 	
 	public BtnEnviarAltaVentaListener() throws IOException {
-		altaVentaVista = BtnAltaVentaListener.altaVentaVista;
+		altaVentaVista = Controlador.altaVentaVista;
 		ventaInterfaz = VentaFactory.GetImplementation("MSSQL");
 		empleadoInterfaz = EmpleadoFactory.GetImplementation("MSSQL");
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
