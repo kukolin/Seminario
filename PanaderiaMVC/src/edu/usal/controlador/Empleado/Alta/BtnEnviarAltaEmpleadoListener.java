@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.EmpleadoFactory;
 import edu.usal.dao.interfaces.EmpleadoInterfaz;
 import edu.usal.negocio.dominio.Empleado;
@@ -23,7 +24,7 @@ public class BtnEnviarAltaEmpleadoListener implements ActionListener{
 	EmpleadoInterfaz empleadoInterfaz;
 	
 	public BtnEnviarAltaEmpleadoListener() throws IOException {
-		altaEmpleadoVista = BtnAltaEmpleadoListener.altaEmpleadoVista;
+		altaEmpleadoVista = Controlador.altaEmpleadoVista;
 		empleadoInterfaz = EmpleadoFactory.GetImplementation("MSSQL");
 	}
 

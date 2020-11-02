@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.controlador.Login.LoginControlador;
 import edu.usal.dao.factory.ProductoFactory;
 import edu.usal.dao.interfaces.ProductoInterfaz;
@@ -22,7 +23,7 @@ public class BtnEnviarAltaProductoListener implements ActionListener{
 	ProductoInterfaz ProductoInterfaz;
 	
 	public BtnEnviarAltaProductoListener() throws IOException {
-		altaProductoVista = BtnAltaProductoListener.altaProductoVista;
+		altaProductoVista = Controlador.altaProductoVista;
 		ProductoInterfaz = ProductoFactory.GetImplementation("MSSQL");
 	}
 

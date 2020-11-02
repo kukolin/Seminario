@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ProductoFactory;
 import edu.usal.dao.interfaces.ProductoInterfaz;
 import edu.usal.negocio.dominio.Producto;
@@ -17,7 +18,7 @@ public class BtnEnviarListarProductoListener implements ActionListener{
 	ProductoInterfaz ProductoInterfaz;
 	
 	public BtnEnviarListarProductoListener() throws IOException {
-		listarProductoVista = BtnListarProductoListener.listarProductoVista;
+		listarProductoVista = Controlador.listarProductoVista;
 		ProductoInterfaz = ProductoFactory.GetImplementation("MSSQL");
 
 	}

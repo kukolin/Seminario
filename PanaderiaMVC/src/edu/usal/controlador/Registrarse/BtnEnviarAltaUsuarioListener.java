@@ -10,6 +10,7 @@ import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.UsuarioFactory;
 import edu.usal.dao.interfaces.UsuarioInterfaz;
 import edu.usal.negocio.dominio.Cliente;
@@ -23,7 +24,7 @@ public class BtnEnviarAltaUsuarioListener implements ActionListener{
 	UsuarioInterfaz UsuarioInterfaz;
 	
 	public BtnEnviarAltaUsuarioListener() throws IOException {
-		registroVista = BtnAltaUsuarioListener.registroVista;
+		registroVista = Controlador.registroVista;
 		UsuarioInterfaz = UsuarioFactory.GetImplementation("MSSQL");
 	}
 
