@@ -41,13 +41,17 @@ public class BtnEnviarAltaUsuarioListener implements ActionListener{
 			if(password.equals(password2)) {
 				
 				if(!(password.equals("") || password2.equals("") || nombre.equals(""))) {	
+					if(nombre.length() <11 || password.length() < 11) {
 					
 					JOptionPane.showMessageDialog(null, "Enviado.");
 			
 					Usuario usuario = new Usuario(nombre, password);	
 					UsuarioInterfaz.AltaUsuario(usuario);
 			
-			
+					}
+					else {
+						JOptionPane.showMessageDialog(null, "Máximo 10 caracteres.", "Warning", JOptionPane.WARNING_MESSAGE);
+					}
 				}else {
 					JOptionPane.showMessageDialog(null, "Por favor, no deje campos vacíos.", "Warning", JOptionPane.WARNING_MESSAGE);
 				}

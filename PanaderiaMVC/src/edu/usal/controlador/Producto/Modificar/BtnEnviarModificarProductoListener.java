@@ -48,7 +48,10 @@ public class BtnEnviarModificarProductoListener implements ActionListener {
 		try {
 			
 			if(modificarProductoVista.tCantidad.getText().matches("[0-9]+") && modificarProductoVista.tPrecio.getText().matches("[0-9]+[.]?[0-9]+")) {
-				
+				if(modificarProductoVista.tDescripcion.getText().length() < 50 ||
+						   modificarProductoVista.tNombre.getText().length() < 50
+
+						   ) {
 				
 				String nombre = modificarProductoVista.tNombre.getText();
 				String descripcion = modificarProductoVista.tDescripcion.getText();
@@ -62,6 +65,10 @@ public class BtnEnviarModificarProductoListener implements ActionListener {
 				
 				ProductoInterfaz.ModificarProducto(idSelec, Producto);
 				
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Límite de caracteres excedido!.");				
+				}
 				}
 				else {
 					new Mensajes().ErrorNumerico();
