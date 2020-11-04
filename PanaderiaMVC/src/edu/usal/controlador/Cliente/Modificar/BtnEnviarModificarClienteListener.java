@@ -46,6 +46,16 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 		int idSelec = alClientes.get(modificarClienteVista.comboBox.getSelectedIndex()).getIdCliente();
 		
 		try {
+			if(modificarClienteVista.tDni.getText().matches("[0-9]+") && modificarClienteVista.tTelefono.getText().matches("[0-9]+")) {
+				if(modificarClienteVista.tDni.getText().matches("[0-9]{7,8}")) {
+					if(modificarClienteVista.tEmail.getText().matches(".+[@]{1}.+[.]{1}.+")){
+						if(modificarClienteVista.tEmail.getText().length() < 30 ||
+								   modificarClienteVista.tNombre.getText().length() < 30 ||
+								   modificarClienteVista.tApellido.getText().length() < 30 ||
+								   modificarClienteVista.tDireccion.getText().length() < 30
+								   ) {
+							
+						
 		java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 			
 		String nombre = modificarClienteVista.tNombre.getText();
@@ -60,9 +70,7 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 		Date dateNac = simpleDateFormat.parse(modificarClienteVista.tFechaNac.getText());
 		java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
 		
-			if(modificarClienteVista.tDni.getText().matches("[0-9]+") && modificarClienteVista.tTelefono.getText().matches("[0-9]+")) {
-				if(modificarClienteVista.tDni.getText().matches("[0-9]{7,8}")) {
-					if(modificarClienteVista.tEmail.getText().matches(".+[@]{1}.+[.]{1}.+")){
+
 						if(dateNac2.before(hoy)) {
 							
 						
@@ -81,6 +89,9 @@ public class BtnEnviarModificarClienteListener implements ActionListener {
 						
 						else {
 							JOptionPane.showMessageDialog(null, "La fecha de nacimiento no puede ser posterior a la de hoy!.");		
+						}
+						}else {
+							JOptionPane.showMessageDialog(null, "Límite de caracteres excedido!.");				
 						}
 						}else {
 							JOptionPane.showMessageDialog(null, "Ingrese un email válido.");		

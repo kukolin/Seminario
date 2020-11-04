@@ -33,6 +33,15 @@ public class BtnEnviarAltaEmpleadoListener implements ActionListener{
 		
 	
 		try {
+			if(altaEmpleadoVista.tDni.getText().matches("[0-9]+") && altaEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
+				if(altaEmpleadoVista.tDni.getText().matches("[0-9]{7,8}")) {
+					if(altaEmpleadoVista.tEmail.getText().length() < 30 ||
+							   altaEmpleadoVista.tNombre.getText().length() < 30 ||
+							   altaEmpleadoVista.tApellido.getText().length() < 30 ||
+							   altaEmpleadoVista.tDireccion.getText().length() < 30
+							   ) {
+						
+					
 			String nombre = altaEmpleadoVista.tNombre.getText();
 			String apellido = altaEmpleadoVista.tApellido.getText();
 			int dni = Integer.parseInt(altaEmpleadoVista.tDni.getText());
@@ -46,8 +55,7 @@ public class BtnEnviarAltaEmpleadoListener implements ActionListener{
 			java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
 			java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
-			if(altaEmpleadoVista.tDni.getText().matches("[0-9]+") && altaEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
-				if(altaEmpleadoVista.tDni.getText().matches("[0-9]{7,8}")) {
+
 					if(dateNac2.before(hoy)) {
 
 
@@ -65,6 +73,9 @@ public class BtnEnviarAltaEmpleadoListener implements ActionListener{
 					
 					else {
 						JOptionPane.showMessageDialog(null, "La fecha de nacimiento no puede ser posterior a la de hoy!.");		
+					}
+					}else {
+						JOptionPane.showMessageDialog(null, "Límite de caracteres excedido!.");				
 					}
 					}else{
 						JOptionPane.showMessageDialog(null, "Ingrese un DNI válido.");

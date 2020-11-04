@@ -34,14 +34,17 @@ public class BtnEnviarAltaProductoListener implements ActionListener{
 		try {
 			
 			if(altaProductoVista.tCantidad.getText().matches("[0-9]+") && altaProductoVista.tPrecio.getText().matches("[0-9]+[.]?[0-9]+")) {
+				if(altaProductoVista.tDescripcion.getText().length() < 50 ||
+						   altaProductoVista.tNombre.getText().length() < 50
+
+						   ) {
 			
-				
 			String nombre = altaProductoVista.tNombre.getText();
 			String descripcion = altaProductoVista.tDescripcion.getText();
 			BigDecimal precio = new BigDecimal(altaProductoVista.tPrecio.getText());
 			int cantidad = Integer.parseInt(altaProductoVista.tCantidad.getText());
 			
-
+			
 			JOptionPane.showMessageDialog(null, "Enviado.");
 			
 			Producto Producto = new Producto(nombre, descripcion, cantidad, 0 , precio);
@@ -49,6 +52,10 @@ public class BtnEnviarAltaProductoListener implements ActionListener{
 			ProductoInterfaz.AltaProducto(Producto);
 			
 			}
+			else {
+				JOptionPane.showMessageDialog(null, "Límite de caracteres excedido!.");				
+			}
+			}	
 			else {
 				new Mensajes().ErrorNumerico();
 			}

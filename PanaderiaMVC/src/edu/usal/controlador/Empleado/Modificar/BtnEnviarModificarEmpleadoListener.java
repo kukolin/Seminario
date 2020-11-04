@@ -46,6 +46,15 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 		int idSelec = alEmpleados.get(modificarEmpleadoVista.comboBox.getSelectedIndex()).getId();
 		
 		try {
+			if(modificarEmpleadoVista.tDni.getText().matches("[0-9]+") && modificarEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
+				if(modificarEmpleadoVista.tDni.getText().matches("[0-9]{7,8}")) {
+					if(modificarEmpleadoVista.tEmail.getText().length() < 30 ||
+							   modificarEmpleadoVista.tNombre.getText().length() < 30 ||
+							   modificarEmpleadoVista.tApellido.getText().length() < 30 ||
+							   modificarEmpleadoVista.tDireccion.getText().length() < 30
+							   ) {
+					
+					
 			String nombre = modificarEmpleadoVista.tNombre.getText();
 			String apellido = modificarEmpleadoVista.tApellido.getText();
 			int dni = Integer.parseInt(modificarEmpleadoVista.tDni.getText());
@@ -59,8 +68,7 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 			java.sql.Date dateNac2 = new java.sql.Date(dateNac.getTime());
 			java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 
-			if(modificarEmpleadoVista.tDni.getText().matches("[0-9]+") && modificarEmpleadoVista.tTelefono.getText().matches("[0-9]+")) {
-				if(modificarEmpleadoVista.tDni.getText().matches("[0-9]{7,8}")) {
+			
 					if(dateNac2.before(hoy)) {
 			
 
@@ -77,6 +85,9 @@ public class BtnEnviarModificarEmpleadoListener implements ActionListener {
 					
 					else {
 						JOptionPane.showMessageDialog(null, "La fecha de nacimiento no puede ser posterior a la de hoy!.");		
+					}
+					}else {
+						JOptionPane.showMessageDialog(null, "Límite de caracteres excedido!.");				
 					}
 					}else{
 						JOptionPane.showMessageDialog(null, "Ingrese un DNI válido.");
