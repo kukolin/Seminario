@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import edu.usal.controlador.Controlador;
 import edu.usal.dao.factory.ProductoFactory;
 import edu.usal.dao.interfaces.ProductoInterfaz;
@@ -53,6 +55,8 @@ public class BtnEnviarBorrarProductoListener implements ActionListener{
 			
 		} catch (NumberFormatException | SQLException e1) {
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No se pudo registrar en la base de datos. Verifique que el producto no exista.");
+
 		}		
 	}
 

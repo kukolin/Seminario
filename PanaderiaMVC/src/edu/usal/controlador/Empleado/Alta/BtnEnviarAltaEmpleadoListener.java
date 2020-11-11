@@ -82,7 +82,7 @@ public class BtnEnviarAltaEmpleadoListener implements ActionListener{
 					}
 					}
 					else {
-								new Mensajes().ErrorNumerico();
+						new Mensajes().ErrorNumerico();
 					}
 			
 		} catch (SQLException | ParseException e1) {
