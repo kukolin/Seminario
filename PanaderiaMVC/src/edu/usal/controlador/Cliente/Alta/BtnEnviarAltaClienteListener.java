@@ -43,7 +43,7 @@ public class BtnEnviarAltaClienteListener implements ActionListener{
 						   ) {
 							
 						
-						
+			//Toma los datos de los textBox y los mete en variables			
 			String nombre = altaClienteVista.tNombre.getText();
 			String apellido = altaClienteVista.tApellido.getText();
 			int dni = Integer.parseInt(altaClienteVista.tDni.getText());
@@ -51,6 +51,7 @@ public class BtnEnviarAltaClienteListener implements ActionListener{
 			String mail = altaClienteVista.tEmail.getText();
 			int telefono = Integer.parseInt(altaClienteVista.tTelefono.getText());
 			
+			//se le da formato a la fecha
 			String pattern = "dd-MM-yyyy";
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 			
@@ -60,7 +61,7 @@ public class BtnEnviarAltaClienteListener implements ActionListener{
 			java.sql.Date hoy = new java.sql.Date(Calendar.getInstance().getTime().getTime());
 			
 			
-
+			//valida la fecha
 						if(dateNac2.before(hoy)) {
 
 			
