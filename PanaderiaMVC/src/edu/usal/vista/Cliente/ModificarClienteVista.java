@@ -22,6 +22,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import com.jidesoft.swing.AutoCompletionComboBox;
 
 import cambodia.raven.DateChooser;
+import edu.usal.controlador.Cliente.ItemsClienteListener;
 
 import javax.swing.JRadioButton;
 import java.awt.event.ActionEvent;
@@ -50,6 +51,8 @@ public class ModificarClienteVista extends JPanel {
 
 	public ModificarClienteVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
+		
+		comboBox = new AutoCompletionComboBox();
 
 		grupo = new ButtonGroup();
 		btnEnviar = new JButton("Enviar");
@@ -130,10 +133,7 @@ public class ModificarClienteVista extends JPanel {
 		JLabel lblCliente = new JLabel("Cliente:");
 		lblCliente.setForeground(new Color(0, 51, 153));
 		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
-		
-//		comboBox = new AutoCompletionComboBox(itemsClienteListener.valores());
-		comboBox = new AutoCompletionComboBox();
-		
+				
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)

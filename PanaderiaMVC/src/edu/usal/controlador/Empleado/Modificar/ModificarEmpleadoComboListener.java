@@ -28,24 +28,6 @@ public class ModificarEmpleadoComboListener implements ItemListener{
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 
-		/*
-		 * int idSelec = modificarEmpleadoVista.comboBox.getSelectedIndex();
-		 * 
-		 * ArrayList<Empleado> alEmpleados = new ArrayList<Empleado>();
-		 * 
-		 * try { alEmpleados = empleadoInterfaz.ListarEmpleados(); } catch (SQLException
-		 * e1) { // TODO Auto-generated catch block e1.printStackTrace(); }
-		 * 
-		 * modificarEmpleadoVista.tNombre.setText(alEmpleados.get(idSelec).getNombre());
-		 * modificarEmpleadoVista.tApellido.setText(alEmpleados.get(idSelec).getApellido()
-		 * ); modificarEmpleadoVista.tDni.setText(alEmpleados.get(idSelec).getDni() + "");
-		 * modificarEmpleadoVista.tTelefono.setText(alEmpleados.get(idSelec).getTelefono()
-		 * + "");
-		 * modificarEmpleadoVista.tDireccion.setText(alEmpleados.get(idSelec).getDireccion
-		 * ()); modificarEmpleadoVista.tEmail.setText(alEmpleados.get(idSelec).getMail());
-		 * modificarEmpleadoVista.tNombre.setText(alEmpleados.get(idSelec).getNombre());
-		 * modificarEmpleadoVista.tNombre.setText(alEmpleados.get(idSelec).getNombre());
-		 */
 
 		 int idSelec = modificarEmpleadoVista.comboBox.getSelectedIndex();
 		

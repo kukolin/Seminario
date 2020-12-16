@@ -22,34 +22,17 @@ public class ModificarClienteComboListener implements ItemListener{
 
 		modificarClienteVista = Controlador.modificarClienteVista;
 		clienteInterfaz = ClienteFactory.GetImplementation("MSSQL");
-		camposClientes = Controlador.camposClientes;
+		camposClientes = new CompletarCamposClientes();
 		
 	}
 	
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 
-		/*
-		 * int idSelec = modificarClienteVista.comboBox.getSelectedIndex();
-		 * 
-		 * ArrayList<Cliente> alClientes = new ArrayList<Cliente>();
-		 * 
-		 * try { alClientes = clienteInterfaz.ListarClientes(); } catch (SQLException
-		 * e1) { // TODO Auto-generated catch block e1.printStackTrace(); }
-		 * 
-		 * modificarClienteVista.tNombre.setText(alClientes.get(idSelec).getNombre());
-		 * modificarClienteVista.tApellido.setText(alClientes.get(idSelec).getApellido()
-		 * ); modificarClienteVista.tDni.setText(alClientes.get(idSelec).getDni() + "");
-		 * modificarClienteVista.tTelefono.setText(alClientes.get(idSelec).getTelefono()
-		 * + "");
-		 * modificarClienteVista.tDireccion.setText(alClientes.get(idSelec).getDireccion
-		 * ()); modificarClienteVista.tEmail.setText(alClientes.get(idSelec).getMail());
-		 * modificarClienteVista.tNombre.setText(alClientes.get(idSelec).getNombre());
-		 * modificarClienteVista.tNombre.setText(alClientes.get(idSelec).getNombre());
-		 */
-
+		
 		 int idSelec = modificarClienteVista.comboBox.getSelectedIndex();
-
+		 
+		// if(idSelec != 0)
 		 camposClientes.completar(idSelec);
 		
 		

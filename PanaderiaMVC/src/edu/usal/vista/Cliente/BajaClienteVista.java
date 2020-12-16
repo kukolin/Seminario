@@ -7,14 +7,10 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
 import com.jidesoft.swing.AutoCompletionComboBox;
-import com.jidesoft.swing.ComboBoxSearchable;
-
-import edu.usal.controlador.Cliente.ItemsClienteListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -22,19 +18,13 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
 
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JComboBox;
-
 public class BajaClienteVista extends JPanel {
 	public JButton btnEnviar;
 	public AutoCompletionComboBox comboBox;
-//	ItemsClienteListener itemsClienteListener;
 	public JButton btnVolver;
 
 	public BajaClienteVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
-
-//		itemsClienteListener = new ItemsClienteListener();
 		
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(new Color(0, 0, 0));
@@ -49,7 +39,6 @@ public class BajaClienteVista extends JPanel {
 		JLabel lblNewLabel = new JLabel("");
 		
 		comboBox = new AutoCompletionComboBox();
-		
 		
 		btnVolver = new JButton("Volver");
 		GroupLayout groupLayout = new GroupLayout(this);
