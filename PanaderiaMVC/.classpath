@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="lib" path="DateChooser.jar"/>
 	<classpathentry kind="lib" path="TPFiore.jar"/>
+	<classpathentry kind="lib" path="jide-oss-3.5.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -7,12 +7,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.swing.JTextField;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -20,23 +18,23 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
-import cambodia.raven.DateChooser;
-import edu.usal.controlador.Producto.ItemsProductoListener;
 
-import javax.swing.JRadioButton;
+import com.jidesoft.swing.AutoCompletionComboBox;
+
+import cambodia.raven.DateChooser;
+
 import java.awt.event.ActionEvent;
 
 public class ModificarProductoVista extends JPanel {
 	public JButton btnEnviar;
 	public ButtonGroup grupo;
-	ItemsProductoListener itemsProductoListener;
 
 	/**
 	 * @wbp.nonvisual location=180,694
 	 */
 	private final DateChooser dcFechaNac = new DateChooser();
 	public JButton btnVolver;
-	public JComboBox comboBox;
+	public AutoCompletionComboBox comboBox;
 	public JLabel lblNombre;
 	public JTextField tNombre;
 	public JLabel lblApellido;
@@ -49,7 +47,6 @@ public class ModificarProductoVista extends JPanel {
 	public ModificarProductoVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		itemsProductoListener = new ItemsProductoListener();
 		grupo = new ButtonGroup();
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(Color.BLACK);
@@ -66,7 +63,7 @@ public class ModificarProductoVista extends JPanel {
 		lblProducto.setForeground(new Color(0, 51, 153));
 		lblProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBox = new JComboBox(itemsProductoListener.valores());
+		comboBox = new AutoCompletionComboBox();
 		
 		lblNombre = new JLabel("Nombre: ");
 		lblNombre.setForeground(new Color(0, 51, 153));

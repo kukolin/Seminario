@@ -20,8 +20,10 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import com.jidesoft.swing.AutoCompletionComboBox;
+
 import cambodia.raven.DateChooser;
-import edu.usal.controlador.Empleado.ItemsEmpleadoListener;
 
 import javax.swing.JRadioButton;
 import java.awt.event.ActionEvent;
@@ -36,7 +38,6 @@ public class ModificarEmpleadoVista extends JPanel {
 	private JLabel lblNombre_12;
 	public JTextField tTelefono;
 	public ButtonGroup grupo;
-	ItemsEmpleadoListener itemsEmpleadoListener;
 
 	/**
 	 * @wbp.nonvisual location=180,694
@@ -47,12 +48,11 @@ public class ModificarEmpleadoVista extends JPanel {
 	public JRadioButton rdbtnM;
 	public JTextField tEmail;
 	public JButton btnVolver;
-	public JComboBox comboBox;
+	public AutoCompletionComboBox comboBox;
 
 	public ModificarEmpleadoVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		itemsEmpleadoListener = new ItemsEmpleadoListener();
 		grupo = new ButtonGroup();
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(Color.BLACK);
@@ -133,7 +133,8 @@ public class ModificarEmpleadoVista extends JPanel {
 		lblEmpleado.setForeground(new Color(0, 51, 153));
 		lblEmpleado.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBox = new JComboBox(itemsEmpleadoListener.valores());
+		comboBox = new AutoCompletionComboBox();
+		
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(

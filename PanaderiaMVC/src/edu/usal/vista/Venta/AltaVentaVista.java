@@ -17,6 +17,9 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import com.jidesoft.swing.AutoCompletionComboBox;
+
 import edu.usal.controlador.Cliente.ItemsClienteListener;
 import edu.usal.controlador.Empleado.ItemsEmpleadoListener;
 import edu.usal.controlador.Producto.ItemsProductoListener;
@@ -31,13 +34,13 @@ public class AltaVentaVista extends JPanel {
 	public ButtonGroup grupo;
 	public JButton btnVolver;
 	public JLabel lblCliente;
-	public JComboBox comboBoxEmpleado;
-	public JComboBox comboBoxCliente;
-	public JComboBox comboBoxP1;
-	public JComboBox comboBoxP2;
-	public JComboBox comboBoxP3;
-	public JComboBox comboBoxP4;
-	public JComboBox comboBoxP5;
+	public AutoCompletionComboBox comboBoxEmpleado;
+	public AutoCompletionComboBox comboBoxCliente;
+	public AutoCompletionComboBox comboBoxP1;
+	public AutoCompletionComboBox comboBoxP2;
+	public AutoCompletionComboBox comboBoxP3;
+	public AutoCompletionComboBox comboBoxP4;
+	public AutoCompletionComboBox comboBoxP5;
 	public JSpinner spinner;
 	public JSpinner spinner_1;
 	public JSpinner spinner_2;
@@ -77,15 +80,15 @@ public class AltaVentaVista extends JPanel {
 		lblCliente.setForeground(new Color(0, 51, 153));
 		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxEmpleado = new JComboBox(itemsEmpleadoListener.valores());
+		comboBoxEmpleado = new AutoCompletionComboBox(itemsEmpleadoListener.valores());
 		
-		comboBoxCliente = new JComboBox(itemsClienteListener.valores());
+		comboBoxCliente = new AutoCompletionComboBox(itemsClienteListener.valores());
 		
 		JLabel lblProducto = new JLabel("Producto 1:");
 		lblProducto.setForeground(new Color(0, 51, 153));
 		lblProducto.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxP1 = new JComboBox(itemsProductoListener.valores());
+		comboBoxP1 = new AutoCompletionComboBox(itemsProductoListener.valores());
 		
 		JLabel lblCantidad = new JLabel("Cantidad: ");
 		lblCantidad.setForeground(new Color(0, 51, 153));
@@ -97,7 +100,7 @@ public class AltaVentaVista extends JPanel {
 		lblProducto_1.setForeground(new Color(0, 51, 153));
 		lblProducto_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxP2 = new JComboBox(itemsProductoListener.valores());
+		comboBoxP2 = new AutoCompletionComboBox(itemsProductoListener.valores());
 		comboBoxP2.setEnabled(false);
 		
 		JLabel lblCantidad_1 = new JLabel("Cantidad: ");
@@ -111,7 +114,7 @@ public class AltaVentaVista extends JPanel {
 		lblProducto_2.setForeground(new Color(0, 51, 153));
 		lblProducto_2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxP3 = new JComboBox(itemsProductoListener.valores());
+		comboBoxP3 = new AutoCompletionComboBox(itemsProductoListener.valores());
 		comboBoxP3.setEnabled(false);
 		
 		JLabel lblCantidad_2 = new JLabel("Cantidad: ");
@@ -125,7 +128,7 @@ public class AltaVentaVista extends JPanel {
 		lblProducto_3.setForeground(new Color(0, 51, 153));
 		lblProducto_3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxP4 = new JComboBox(itemsProductoListener.valores());
+		comboBoxP4 = new AutoCompletionComboBox(itemsProductoListener.valores());
 		comboBoxP4.setEnabled(false);
 		
 		JLabel lblCantidad_3 = new JLabel("Cantidad: ");
@@ -139,7 +142,7 @@ public class AltaVentaVista extends JPanel {
 		lblProducto_4.setForeground(new Color(0, 51, 153));
 		lblProducto_4.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBoxP5 = new JComboBox(itemsProductoListener.valores());
+		comboBoxP5 = new AutoCompletionComboBox(itemsProductoListener.valores());
 		comboBoxP5.setEnabled(false);
 		
 		JLabel lblCantidad_4 = new JLabel("Cantidad: ");

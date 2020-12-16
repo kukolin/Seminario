@@ -7,12 +7,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemListener;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.swing.JTextField;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.ButtonGroup;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -20,8 +18,10 @@ import java.awt.Font;
 import java.awt.SystemColor;
 
 import javax.swing.LayoutStyle.ComponentPlacement;
+
+import com.jidesoft.swing.AutoCompletionComboBox;
+
 import cambodia.raven.DateChooser;
-import edu.usal.controlador.Cliente.ItemsClienteListener;
 
 import javax.swing.JRadioButton;
 import java.awt.event.ActionEvent;
@@ -36,7 +36,6 @@ public class ModificarClienteVista extends JPanel {
 	private JLabel lblNombre_12;
 	public JTextField tTelefono;
 	public ButtonGroup grupo;
-	ItemsClienteListener itemsClienteListener;
 
 	/**
 	 * @wbp.nonvisual location=180,694
@@ -47,12 +46,11 @@ public class ModificarClienteVista extends JPanel {
 	public JRadioButton rdbtnM;
 	public JTextField tEmail;
 	public JButton btnVolver;
-	public JComboBox comboBox;
+	public AutoCompletionComboBox comboBox;
 
 	public ModificarClienteVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
 
-		itemsClienteListener = new ItemsClienteListener();
 		grupo = new ButtonGroup();
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setBackground(Color.BLACK);
@@ -133,7 +131,8 @@ public class ModificarClienteVista extends JPanel {
 		lblCliente.setForeground(new Color(0, 51, 153));
 		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
-		comboBox = new JComboBox(itemsClienteListener.valores());
+//		comboBox = new AutoCompletionComboBox(itemsClienteListener.valores());
+		comboBox = new AutoCompletionComboBox();
 		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(

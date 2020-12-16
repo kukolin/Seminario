@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import edu.usal.controlador.BtnVolver;
 import edu.usal.controlador.Controlador;
+import edu.usal.controlador.Producto.ItemsProductoListener;
 import edu.usal.negocio.dominio.Producto;
 import edu.usal.vista.Frame;
 import edu.usal.vista.Producto.ModificarProductoVista;
@@ -19,12 +20,13 @@ public class BtnModificarProductoListener implements ActionListener{
 	Frame frame;
 	static ModificarProductoVista modificarProductoVista;
 	CompletarCamposProductos completarCamposProductos;
+	ItemsProductoListener itemsProductoListener;
 	
 	public BtnModificarProductoListener() throws IOException, SQLException {
 		frame = Controlador.frame;
 		modificarProductoVista = Controlador.modificarProductoVista;
 		completarCamposProductos = new CompletarCamposProductos();
-
+		itemsProductoListener = new ItemsProductoListener();
 	}
 	
 	@Override
@@ -50,7 +52,17 @@ public class BtnModificarProductoListener implements ActionListener{
 				
 				e1.printStackTrace();
 			}
-
+			
+			try {
+				String[] hola = itemsProductoListener.valores();
+				
+				modificarProductoVista.comboBox.removeAllItems();
+				
+				for(int i=0;i<hola.length;i++) {
+					modificarProductoVista.comboBox.addItem(hola[i]);
+				}
+			} catch (IOException | SQLException e1) {
+			}
 		  
 	}
 

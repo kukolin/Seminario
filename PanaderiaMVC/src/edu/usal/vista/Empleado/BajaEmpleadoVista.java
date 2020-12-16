@@ -10,6 +10,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+
+import com.jidesoft.swing.AutoCompletionComboBox;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import java.awt.Color;
@@ -24,7 +27,7 @@ import javax.swing.JComboBox;
 
 public class BajaEmpleadoVista extends JPanel {
 	public JButton btnEnviar;
-	public JComboBox comboBox;
+	public AutoCompletionComboBox comboBox;
 	public JButton btnVolver;
 
 	public BajaEmpleadoVista() throws IOException, SQLException {
@@ -42,7 +45,7 @@ public class BajaEmpleadoVista extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		
-		comboBox = new JComboBox();
+		comboBox = new AutoCompletionComboBox();
 		
 		btnVolver = new JButton("Volver");
 		GroupLayout groupLayout = new GroupLayout(this);

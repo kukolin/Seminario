@@ -49,7 +49,7 @@ public class ModificarClienteComboListener implements ItemListener{
 		 */
 
 		 int idSelec = modificarClienteVista.comboBox.getSelectedIndex();
-		
+
 		 camposClientes.completar(idSelec);
 		
 		

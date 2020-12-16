@@ -14,17 +14,22 @@ import edu.usal.controlador.Producto.ItemsProductoListener;
 
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
+import com.jidesoft.swing.ComboBoxSearchable;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.SystemColor;
 
 import javax.swing.JComboBox;
+import com.jidesoft.swing.AutoCompletionComboBox;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class BajaProductoVista extends JPanel {
 	public JButton btnEnviar;
-	public JComboBox comboBox;
 	ItemsProductoListener itemsProductoListener;
 	public JButton btnVolver;
+	public AutoCompletionComboBox comboBox;
 
 	public BajaProductoVista() throws IOException, SQLException {
 		setBackground(SystemColor.activeCaption);
@@ -42,9 +47,10 @@ public class BajaProductoVista extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		
-		comboBox = new JComboBox();
-		
 		btnVolver = new JButton("Volver");
+		
+		comboBox = new AutoCompletionComboBox();
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -57,17 +63,17 @@ public class BajaProductoVista extends JPanel {
 					.addComponent(btnEnviar, GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
 					.addGap(171))
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(189)
-					.addComponent(lblNewLabel)
-					.addContainerGap(261, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(142)
-					.addComponent(comboBox, 0, 159, Short.MAX_VALUE)
-					.addGap(149))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
-					.addContainerGap(306, Short.MAX_VALUE)
+					.addContainerGap(334, Short.MAX_VALUE)
 					.addComponent(btnVolver)
 					.addGap(47))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addContainerGap(274, Short.MAX_VALUE)
+					.addComponent(lblNewLabel)
+					.addGap(176))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(134)
+					.addComponent(comboBox, GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+					.addGap(150))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -76,9 +82,9 @@ public class BajaProductoVista extends JPanel {
 					.addComponent(btnVolver)
 					.addGap(18)
 					.addComponent(lblIngreseElId, GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
-					.addGap(28)
+					.addGap(37)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(22)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
 					.addGap(28)
 					.addComponent(btnEnviar, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
